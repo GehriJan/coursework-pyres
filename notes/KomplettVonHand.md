@@ -285,6 +285,7 @@ flowchart TD
     2 ---> 23
     4 ---> 17
     6 ---> 39
+    8 ---> 27
     10 ---> 35
     12 ---> 43
     14 ---> 31
@@ -303,3 +304,56 @@ flowchart TD
     40 ---> 5
     42 ---> 25
     44 ---> 11
+
+
+
+# Breadth-First-Search:
+
+Von:
+"-avoided(the_kangaroo),in"
+"-avoided(the_kangaroo),out"
+
+Node                                Graph Distanz   RelevanzDistanz
+"-in_house(Cat),in"                 7               
+"-in_house(Cat),out"                7
+"cat(Cat),in"                       8               5   
+"cat(Cat),out"                      8               5
+"-gazer(Gazer),in"                  17
+"-gazer(Gazer),out"                 17
+"suitable_pet(Gazer),in"            18              10
+"suitable_pet(Gazer),out"           18              10
+"-detested(Detested),in"            2               2
+"-detested(Detested),out"           2               2
+"avoided(Detested),in"              1
+"avoided(Detested),out"             1
+"-carnivore(Carnivore),in"          13
+"-carnivore(Carnivore),out"         13
+"prowler(Carnivore),in"             14              8
+"prowler(Carnivore),out"            14              8
+"-cat(Cat),in"                      9
+"-cat(Cat),out"                     9
+"mouse_killer(Cat),in"              10              6
+"mouse_killer(Cat),out"             10              6
+"-takes_to_me(Taken_animal),in"     5
+"-takes_to_me(Taken_animal),out"    5
+"in_house(Taken_animal),in"         6               4
+"in_house(Taken_animal),out"        6               4
+"-kangaroo(Kangaroo),in"            20              11
+"-kangaroo(Kangaroo),out"           20              11
+"-suitable_pet(Kangaroo),in"        19
+"-suitable_pet(Kangaroo),out"       19
+"-mouse_killer(Killer),in"          11
+"-mouse_killer(Killer),out"         11
+"carnivore(Killer),in"              12              7
+"carnivore(Killer),out"             12              7
+"takes_to_me(Animal),in"            4               3
+"takes_to_me(Animal),out"           4               3
+"detested(Animal),in"               3
+"detested(Animal),out"              3
+"-prowler(Prowler),in"              15
+"-prowler(Prowler),out"             15
+"gazer(Prowler),in"                 16              9
+"gazer(Prowler),out"                16              9
+"kangaroo(the_kangaroo),in"         21
+"kangaroo(the_kangaroo),out"        21
+"-avoided(the_kangaroo),in"         0
