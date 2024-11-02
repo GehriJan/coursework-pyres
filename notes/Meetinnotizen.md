@@ -1,6 +1,6 @@
 # Meetinnotizen
 
-## 11.10.2024
+## Meeting 11.10.2024
 ### Wiss. Arbeit:
 - Was heißt Length n Refutation? -> anzahl der resolutionsschritte
 - Was genau sind Grundinstanzen?
@@ -8,12 +8,11 @@
   ( a computing procedure for quantification)
   dpll verfahren
 
-
 ### PyRes:
-Simple
+- Simple
     - processClause() -> warum muss FreshVarCopy gemacht werden? -> deckt sonst nur Fall ab, dass beide variablen gleich sind
     - Was genau hat es mit isInferenceLit() auf sich? wäre das vielleicht eine Möglichkeit, relevante Klauseln auszuwählen? -> wäre eine Erweiterung
-FoF:
+- FoF
     - was macht eine "bessere" Klausel aus? -> unterschiedliche möglichkeiten: symbol counting, älteste klausel
     - Die meisten Add-Ons (subsumption, tautology) werden bei processClause gemacht, oder?
         - nur EqAxioms nicht
@@ -32,6 +31,17 @@ FoF:
 2. Algorithmus von Hand durchführen 
 3. MVP
     - in simple integrieren -> wo? vor .saturate()? -> ja mit  isInferenceLit? -> erst mal nicht oder eigene Datenstruktur hinzufügen? -> als methode von Proofstate
-    - 
 4. Rahmendokument machen
    quasi als vor-Disposition-paper -> 01.11.-07.11.
+
+## Meeting 05/11/ 17:45
+
+### Aktueller Stand
+- Algorithmus von Hand auf `EXAMPLES/PUZ002-1.p` durchgeführt
+    1. Graph erstellen
+        1. Nodes definieren
+        2. Edges innerhalb von Clauses definieren
+        3. Edges zwischen Clauses definieren
+    2. Breadth-First-Search
+- Ersten Draft implementiert
+    - auf git pushen? eigener branch? 
