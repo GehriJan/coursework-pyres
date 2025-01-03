@@ -43,5 +43,21 @@
         2. Edges innerhalb von Clauses definieren
         3. Edges zwischen Clauses definieren
     2. Breadth-First-Search
+    -> Wenn ich 1000 Klauseln hab, muss dann der Graph für alle Tausend Klauseln erstellt werden?
 - Ersten Draft implementiert
-    - auf git pushen? eigener branch? 
+    - auf git pushen? eigener branch?
+
+
+### Notizen währrenddessen
+- aktuelle Version richtiges Endergebnis -> [SZSOntology](https://tptp.org/cgi-bin/SeeTPTP?Category=Documents&File=SZSOntology)
+- metriken definieren und implementieren
+- auf TPTP testen -> [TPTP website](https://tptp.org/TPTP/)
+    - mit "-" und "+" ist für uns relevant
+        - FOF: Dateiname mit "+"
+        - CNF: Dateiname mit "-"
+    - mit starexec miami testen
+        - [link](https://starexec.ccs.miami.edu/starexec/)
+        - zugriff mit verweis auf Pyres - studienarbeit - schulz beantragen
+- neuen Termin ausmachen
+- neue Version performanter implementieren
+- 
