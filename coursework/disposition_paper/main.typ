@@ -1,3 +1,4 @@
+#import "@preview/timeliney:0.1.0": *
 #import "@preview/charged-ieee:0.1.3": ieee
 
 #set page(numbering: "1")
@@ -41,16 +42,16 @@ Automatic theorem provers try to prove the correctness of formal theorems using 
 When proving theorems with a big set of logical assertions, one main challenge is the implementation of efficient algorithms to minimize the time, computing power and storage needed for the computation.
 
 There are multiple strategies to achieve this goal. One of them is to restrict the search for the proof to a subset of _relevant_ clauses.
-Relevant clauses can be determined with different heuristics.
 
+Relevant clauses can be determined with different heuristics.
 Some of them compute relevant clauses by measuring how many and which symbols they share with certain other clauses.
 Another defines them by finite models, with the set of the relevant clauses sharing models with the theorem.
 It is also possible to model relevance with machine learning approaches like a Bayesian learning system.
 
-The alternating path relevance approach determines relevance by constructing a graph modelling all symbols of all clauses. Links are defined either by switching the symbol within the clause or by a possible unification with another clause.
+The alternating path relevance approach determines relevance by constructing a graph modelling all symbols of all clauses. Edges are defined either by switching the symbol within the clause or by a possible unification with another clause.
 Using this graph, a _relevance distance_ can be computed. The set of clauses can now be filtered for clauses with a maximum relevance distance to the theorem.
 
-There do exist implementations of this approach, but they only filter for _relevance connectedness_ ($<=> "relevance distance" < oo <=> exists "path between clauses"$).
+There do exist implementations of this approach, but they only filter for _relevance connectedness_ ($<=> "relevance distance" != oo <=> exists "path between clauses"$).
 
 == Goal
 Goal of the coursework is
@@ -73,21 +74,26 @@ If the algorithm turns out to perform well, it becomes a candidate for being imp
 The key steps of the development process are as follows:
 
 1. Familiarization
-  a. With the theoretical foundations
-  b. With the PyRes-codebase
+  1. With the theoretical foundations
+  2. With the PyRes-codebase
 2. Solving the problem by hand -> Defining the algorithm steps
 3. Implementation of MVP
 4. Evaluating MVP on large dataset of test samples
 5. Steps (3.) and (4.) are repeated in an iterative development cycle
 6. Final adjustments
 7. Final evaluation of algorithm
-  a. Identification of theoretical and technical bottlenecks
+  1. Identification of theoretical and technical bottlenecks
 
-The coursework shall be written alongside the development. The introduction chapters can be written and finished withing the development phase; the main part is not going to include every single adjustments made, therefore it will be written with a certain delay regarding the development to identify key adjustments.
+The coursework shall be written alongside the development. The introduction chapters can be written and finished within the development phase; the main part is not going to include every single adjustments made, therefore it will be written with a certain delay regarding the development to identify key adjustments.
 
 == Central milestones
-The first big milestone will be solving the problem by hand. This will determine, how the algorithm is going to be shaped.
-Another main milestone is the evaluation of the first MVP. These results will guide the further development.
+
+The first milestone will be when the development of the MVP is finished.
+Another main milestone is the evaluation of the first MVP. These results guide the development phase directly afterwards.
+Then, end of development in mid of April will be the next big milestone, moving the focus on the thesis.
+The last big milestone will be finishing the MVP thesis, which is scheduled for start/mid of May.
+
+A detailed time schedule including the milestones can be found later in the document @timeline.
 
 == Structure of coursework
 The provisional structure of the coursework is as follows:
@@ -113,17 +119,116 @@ The provisional structure of the coursework is as follows:
   - Implementation validation
   - Experimental setup
   - Experimental result
+  - Evaluation of the experimental result
 - Future work
 - Conclusion
 
-- [x] Identification of key steps
-- [x] Milestones, consequences and chances of the milestones
-- [ ] time schedule for finishing work and coursework
-- [x] First structure of coursework, including chapters and sub-chapters
+// - [x] Identification of key steps
+// - [x] Milestones, consequences and chances of the milestones
+// - [x] time schedule for finishing work and coursework
+// - [x] First structure of coursework, including chapters and sub-chapters
 
-= Basic Literatur
+== Basic Literatur
 
-- [ ] Proofs for the current situation
-- [ ] Who has worked on similar topic areas?
-- [ ] How does the coursework fit into the scientific landscape and what is new?
-- [ ] What is being improved by the solution and how is this proven?
+The coursework aims to implement the alternating path relevance theory formalized py D. Plaisted, therefore his papers @plaisted2019propertiesextensionsalternatingpath and @PLAISTED200359 serve as the foundation of this coursework.
+
+@teachingByExample serves as a system description for PyRes.
+
+
+
+
+
+
+
+#set page(flipped: true, columns: 1)
+= Time schedule Gantt chart
+#figure(
+    timeline(
+      show-grid: true,
+      {
+        let task-style = (stroke: 2pt + gray)
+        let milestone-style = (stroke: (dash: "dashed"))
+        headerline(
+          group(([*2024/Q4*], 3)),
+          group(([*2025/Q1*], 3)),
+          group(([*2025/Q2*], 3)),
+        )
+        headerline(
+          group(..("Oct", "Nov", "Dec").map(n => strong(n))),
+          group(..("Jan", "Feb", "Mar").map(n => strong(n))),
+          group(..("Apr", "May", "Jun").map(n => strong(n))),
+        )
+
+        taskgroup(title: [*Research*], {
+          task("Research Altern. P. Theory", (0, 0.75), (4,6), style: task-style)
+          task("Get to know PyRes", (0, 1), style: task-style)
+        })
+
+        taskgroup(title: [*Development*], {
+          task("Develop MVP", (0.5, 1), style: task-style)
+          task("Test MVP", (3.5, 4), style: task-style)
+          task("Iterative Dev Cycle", (4, 6), style: task-style)
+          task("Close Dev Phase", (6, 6.5), style: task-style)
+        })
+
+        taskgroup(title: [*Writing thesis*], {
+          task("Theory + PyRes", (4, 5), style: task-style)
+          task("Design", (4.5, 5), style: task-style)
+          task("Implementation", (5, 6.5), style: task-style)
+          task("Evaluation", (6.5, 7), style: task-style)
+          task("Introduction + Abtract", (7, 7.25), style: task-style)
+          task("Revise thesis", (7.25, 8), style: task-style)
+        })
+
+        milestone(
+          at: 1,
+          style: milestone-style,
+          align(center, [
+            *First MVP*\
+            Start of November
+          ])
+        )
+
+        milestone(
+          at: 4,
+          style: milestone-style,
+          align(center, [
+            *Start of intensive \
+            development phase*\
+            Start of February
+          ])
+        )
+
+        milestone(
+          at: 6.5,
+          style: milestone-style,
+          align(center, [
+            *Development finished*\
+            Mid April
+          ])
+        )
+
+        milestone(
+          at: 7.25,
+          style: milestone-style,
+          align(center, [
+            *Thesis MVP done*\
+            Start/Mid May
+          ])
+        )
+
+        milestone(
+          at: 8.4,
+          style: milestone-style,
+          align(center, [
+            *Submission*\
+            12th of June
+          ])
+        )
+      }
+    ),
+  caption: [Gantt chart displaying different phases and milestones of the coursework.]
+  ) <timeline>
+#set page(flipped: false, columns: 2)
+
+

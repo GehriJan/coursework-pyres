@@ -61,3 +61,18 @@
 - neuen Termin ausmachen
 - neue Version performanter implementieren
 - 
+
+
+## Meeting 17/01/ 16:00
+
+### Aktueller Stand
+- MVP soweit fertig, aber noch nichts fürs Testen vorbereitet
+    - welche konkreten Schritte vor testen noch notwendig?
+    - wie testen?
+
+### Fragen
+- Ließt er die Studienarbeit Probe und gibt Feedback?
+- Dispositions-papier
+    - Schreibstil?
+    - Hat er Empfehlungen/Anpassungen bzgl. des Zeitplans?
+- 
