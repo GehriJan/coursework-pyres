@@ -23,10 +23,10 @@ Clauses:
 ## Unifizierbar-Matrix:
 Linked: 1, Not Linked: 0
     1   2   3   4   5   6   7   8   9   10  11  12
-1   0   0   0   0   1   1   0   0   0   0   0   0 
-2       0   0   0   0   0   1   0   0   1   0   0
-3           0   0   0   0   0   0   1   0   0   1
-4               0   0   0   0   1   0   1   0   0
+1   0   0   3   3   1   1   0   2   2   0   0   0 
+2       0   0   2   0   0   1   3   0   1   2   0
+3           0   0   0   2   0   0   1   0   0   1
+4               0   2   0   0   1   0   1   0   0
 5                   0   0   0   1   0   0   0   0
 6                       0   0   0   1   0   0   0
 7                           0   0   0   0   1   0
@@ -36,6 +36,46 @@ Linked: 1, Not Linked: 0
 11                                          0   0
 12                                              0
 
+    1   2   3   4   5   6   7   8   9   10  11  12
+1   =   x   x   x   1   1   x   x   x   x   x   x 
+2       =   x   x   x   x   1   x   x   1   x   x
+3           =   x   x   x   x   x   1   x   x   1
+4               =   x   x   x   1   x   1   x   x
+5                   =   x   x   1   x   x   x   x
+6                       =   x   x   1   x   x   x
+7                           =   x   x   x   1   x
+8                               =   x   x   x   x
+9                                   =   x   x   x
+10                                      =   x   x
+11                                          =   x
+12                                              =
+
+    1   2   3   4   5   6   7   8   9   10  11  12
+1   =   x   x   x   1   1   x   x   2   x   x   x 
+2       =   x   x   x   x   1   x   x   1   x   x
+3           =   x   x   x   x   x   1   x   x   1
+4               =   x   x   x   1   x   1   x   x
+5                   =   x   x   1   x   x   x   x
+6                       =   x   x   1   x   x   x
+7                           =   x   x   x   1   x
+8                               =   x   x   x   x
+9                                   =   x   x   x
+10                                      =   x   x
+11                                          =   x
+12                                              =
+    1   2   3   4   5   6   7   8   9   10  11  12
+1   =   x   x   x   1   1   x   x   x   x   x   x 
+2   x   =   x   x   x   x   1   x   x   1   x   x
+3   x   x   =   x   x   x   x   x   1   x   x   1
+4   x   x   x   =   x   x   x   1   x   1   x   x
+5   1   x   x   x   =   x   x   1   x   x   x   x
+6   1   x   x   x   x   =   x   x   1   x   x   x
+7   x   1   x   x   x   x   =   x   x   x   1   x
+8   x   x   x   1   1   x   x   =   x   x   x   x
+9   x   x   1   x   x   1   x   x   =   x   x   x
+10  x   1   x   1   x   x   x   x   x   =   x   x
+11  x   x   x   x   x   x   1   x   x   x   =   x
+12  x   x   1   x   x   x   x   x   x   x   x   =
 
 Clauses:
 1 - { ~ in_house(Cat),              cat(Cat)                }

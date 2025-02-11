@@ -156,3 +156,13 @@
     - Nein. Man kann sich Problem-Bundles (bspw. ganz TPTP) von einem anderen User rein-verlinken. Herr Schulz macht das mal ausfindig
 
 ## Meeting 21.03. 13:30 Uhr
+
+### Informationen
+
+### Fragen
+- Welche Python version?
+- Gibt es Probleme, die viele nicht benötigte Klauseln haben?
+
+- "Ich" in Paper verwenden? Weil im Englischen ja oft "We" verwendet wird
+
+- Wie kriegt man den Starexec output wie bei [df_tptp_pyres](../meeting/protocol_default.csv)
