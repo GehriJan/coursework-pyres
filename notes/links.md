@@ -11,5 +11,5 @@
 ### Starexec
 - [Main Website](https://starexec.ccs.miami.edu/)
 - [Github Repository](https://github.com/StarExec/StarExec)
-- []()
+- [User Guide](https://starexec.ccs.miami.edu/starexec/public/StarExecUserGuide.pdf)
 - []()
