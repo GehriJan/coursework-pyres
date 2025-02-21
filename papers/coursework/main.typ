@@ -5,7 +5,7 @@
 #import "config.typ": *
 
 #show: supercharged-dhbw.with(
-  title: "Implementing a Strategy for Clause Selection with Alternating Path Theory for Automatic Theorem Proving In Python",
+  title: "Implementing a graph-based clause-selection strategy for Automatic Theorem Proving in Python",
   authors: (
     (
       name: "Jannis Gehring",
@@ -17,6 +17,8 @@
   acronyms: acronyms, // displays the acronyms defined in the acronyms dictionary
   at-university: true, // if true the company name on the title page and the confidentiality statement are hidden
   bibliography: bibliography("ref.bib"),
+  date-format: "[month]/[day]/[year]",
+  time-frame: "09/30/2024 - 06/12/2025",
   date: datetime.today(),
   glossary: glossary, // displays the glossary terms defined in the glossary dictionary
   language: "en", // en, de

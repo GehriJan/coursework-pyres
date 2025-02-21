@@ -18,6 +18,11 @@
   "en": "Student ID, Course:",
 )
 
+#let TIMEFRAME = (
+  "de": "Zeitraum:",
+  "en": "Time frame:",
+)
+
 #let TITLEPAGE_COMPANY = (
   "de": "Unternehmen:",
   "en": "Company:",

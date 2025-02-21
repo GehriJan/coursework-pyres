@@ -71,6 +71,7 @@
   city: none,
   supervisor: (:),
   date: none,
+  time-frame: none,
   date-format: "[day].[month].[year]",
   bibliography: none,
   bib-style: "ieee",
@@ -205,6 +206,7 @@
       show-confidentiality-statement,
       confidentiality-marker,
       university-short,
+      time-frame,
     )
   }
 

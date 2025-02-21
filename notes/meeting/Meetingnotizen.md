@@ -159,10 +159,51 @@
 
 ### Informationen
 
-### Fragen
+#### Programmieren
+- Ziel: Die Performance der AP auf dem PyRes evaluieren und verbessern
+  - Weg1: Testen auf Starexec und Evaluation der Zeit- (und Memory-)komplexität 
+    - Problem: Welcher Wert soll für die Relevanzdistanz gewählt werden?
+        - Weg: Ausprobieren unterschiedlicher Werte für unterschiedliche Probleme mit Multiprocessing
+        - -> Frage trotzdem nicht geklärt
+        **- Alternative: eigene Runskripte für unterschiedliche Parameter**
+            - pro solver können mehrere Runskripte angelegt werden
+        **- Heatmap mit x=problem, y=rel_distance und color=status machen**
+  - Weg2: Profiling
+  - Problem: Nach welchen Metriken sollen die unterschiedlichen Implementierungen des Pyres bewertet werden?
+    **- Ausgabeparameter: Laufzeit für Relevanz-distanz-berechnung**
+
+**Zentrale Fragen:**
+**1. Wie zeitintensiv ist die Prämissenselektion? Skalierbarkeit, ...**
+**2. Taugt die Prämissenselektion überhaupt was?**
+
 - Welche Python version?
+    **-> keine Restriktionen**
+- Welche Möglichkeiten gibt es, bei Starexec nach Problemen zu filtern, die PyRes lösen kann?
+    **-> im run-script, gibt schon eine E-Implementierung davon**
+    **-> schon implementiert**
 - Gibt es Probleme, die viele nicht benötigte Klauseln haben?
+    **-> CSR haben viele Klauseln**
 
+**NEXT STEPS:**
+    **- Rel_distance über run-script spezifizieren**
+    **- Parameterspezifikation über print("# key: value") ausgeben**
+    **- auf starexec laufen lassen**
+    **- analysieren**
+
+#### Studienarbeit
 - "Ich" in Paper verwenden? Weil im Englischen ja oft "We" verwendet wird
+    **-> "I/We" geht klar, nur nicht random mischen**
+- Einleitung erst am Ende schreiben?
+- Passt die Gliederung des Dispositionspapiers soweit?
+    **- Passt soweit**
 
+### Fragen
+- Soll der Pyres am Ende die relevance distance selber wählen?
+    **- Optional, guter Bonus** 
 - Wie kriegt man den Starexec output wie bei [df_tptp_pyres](../meeting/protocol_default.csv)
+    **- über genprot.py**
+
+## Meeting 13.03., 18:00 Uhr
+
+
+

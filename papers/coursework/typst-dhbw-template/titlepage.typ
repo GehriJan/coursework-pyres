@@ -21,6 +21,7 @@
   show-confidentiality-statement,
   confidentiality-marker,
   university-short,
+  time-frame,
 ) = {
   if (many-authors) {
     v(-1.5em)
@@ -207,6 +208,9 @@
     row-gutter: 11pt,
     column-gutter: 2.5em,
 
+    text(weight: "semibold", TIMEFRAME.at(language)),
+    text(time-frame),
+
     // students
     text(weight: "semibold", TITLEPAGE_STUDENT_ID.at(language)),
     stack(
@@ -217,61 +221,61 @@
       }
     ),
 
-    // company
-    if (not at-university) {
-      text(weight: "semibold", TITLEPAGE_COMPANY.at(language))
-    },
-    if (not at-university) {
-      stack(
-        dir: ttb,
-        for author in authors {
-          let company-address = ""
+    // // company
+    // if (not at-university) {
+    //   text(weight: "semibold", TITLEPAGE_COMPANY.at(language))
+    // },
+    // if (not at-university) {
+    //   stack(
+    //     dir: ttb,
+    //     for author in authors {
+    //       let company-address = ""
 
-          // company name
-          if (
-            "name" in author.company and
-            author.company.name != none and
-            author.company.name != ""
-            ) {
-            company-address+= author.company.name
-          } else {
-            panic("Author '" + author.name + "' is missing a company name. Add the 'name' attribute to the company object.")
-          }
+    //       // company name
+    //       if (
+    //         "name" in author.company and
+    //         author.company.name != none and
+    //         author.company.name != ""
+    //         ) {
+    //         company-address+= author.company.name
+    //       } else {
+    //         panic("Author '" + author.name + "' is missing a company name. Add the 'name' attribute to the company object.")
+    //       }
 
-          // company address (optional)
-          if (
-            "post-code" in author.company and
-            author.company.post-code != none and
-            author.company.post-code != ""
-            ) {
-            company-address+= text([, #author.company.post-code])
-          }
+    //       // company address (optional)
+    //       if (
+    //         "post-code" in author.company and
+    //         author.company.post-code != none and
+    //         author.company.post-code != ""
+    //         ) {
+    //         company-address+= text([, #author.company.post-code])
+    //       }
 
-          // company city
-          if (
-            "city" in author.company and
-            author.company.city != none and
-            author.company.city != ""
-            ) {
-            company-address+= text([, #author.company.city])
-          } else {
-            panic("Author '" + author.name + "' is missing the city of the company. Add the 'city' attribute to the company object.")
-          }
+    //       // company city
+    //       if (
+    //         "city" in author.company and
+    //         author.company.city != none and
+    //         author.company.city != ""
+    //         ) {
+    //         company-address+= text([, #author.company.city])
+    //       } else {
+    //         panic("Author '" + author.name + "' is missing the city of the company. Add the 'city' attribute to the company object.")
+    //       }
 
-          // company country (optional)
-          if (
-            "country" in author.company and
-            author.company.country != none and
-            author.company.country != ""
-          ) {
-            company-address+= text([, #author.company.country])
-          }
+    //       // company country (optional)
+    //       if (
+    //         "country" in author.company and
+    //         author.company.country != none and
+    //         author.company.country != ""
+    //       ) {
+    //         company-address+= text([, #author.company.country])
+    //       }
 
-          company-address
-          linebreak()
-        }
-      )
-    },
+    //       company-address
+    //       linebreak()
+    //     }
+    //   )
+    // },
 
     // company supervisor
     if ("company" in supervisor) {

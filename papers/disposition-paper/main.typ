@@ -136,10 +136,6 @@ The coursework aims to implement the alternating path relevance theory formalize
 
 
 
-
-
-
-
 #set page(flipped: true, columns: 1)
 = Time schedule Gantt chart
 #figure(
