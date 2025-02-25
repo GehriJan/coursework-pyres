@@ -205,5 +205,8 @@
 
 ## Meeting 13.03., 18:00 Uhr
 
+### Fragen
+- [ ] Welchen Grund hat es, dass momentan im Code `resource.getrusage` anstatt `time.time()` verwendet wird?
+
 
 
