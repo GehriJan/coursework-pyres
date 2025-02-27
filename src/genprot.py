@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import pandas as pd
 
 """
 genprot 0.2
@@ -76,50 +77,84 @@ from os.path import dirname, splitext, basename, isdir, isfile
 from collections import defaultdict
 
 
-protfile = (lambda name: "protocol_" + name + ".csv")
+protfile = lambda name: "protocol_" + name + ".csv"
 
-firstkeys   = ["Problem", "Status", "User time", "Failure", "Version", "Preprocessing time"]
-metakeys    = ["Filename", "Configname", "Archivename"]
-removekeys  = ["eprover", "Command", "Computer", "Model", "CPU", "Memory", "OS", "CPULimit", "DateTime", "CPUTime"]
+firstkeys = [
+    "Problem",
+    "Status",
+    "User time",
+    "Failure",
+    "Version",
+    "Preprocessing time",
+]
+metakeys = ["Filename", "Configname", "Archivename"]
+removekeys = [
+    "eprover",
+    "Command",
+    "Computer",
+    "Model",
+    "CPU",
+    "Memory",
+    "OS",
+    "CPULimit",
+    "DateTime",
+    "CPUTime",
+]
 featurekeys = ["Type", "Equational"]
 
 version_re = re.compile("[0-9]+[.][0-9]+")
 
-failuremap = {"User resource limit exceeded"    :"maxres",
-              "Out of unprocessed clauses!" :"incomplete",
-              "Resource limit exceeded (memory)":"maxmem",
-              "Resource limit exceeded (time)"  :"maxtime",
-              "exec failed"         :"starexec",
-              "Inappropriate"       :"problemtype",
-              "unknown"             :"unknown"}
+failuremap = {
+    "User resource limit exceeded": "maxres",
+    "Out of unprocessed clauses!": "incomplete",
+    "Resource limit exceeded (memory)": "maxmem",
+    "Resource limit exceeded (time)": "maxtime",
+    "exec failed": "starexec",
+    "Inappropriate": "problemtype",
+    "unknown": "unknown",
+}
 
-statusmap = {"unknown"                        :"F",
-             "exec failed"                    :"F",
-             "SZS status GaveUp"              :"F",
-             "SZS status ResourceOut"         :"F",
-             "SZS status Satisfiable"         :"N",
-             "SZS status CounterSatisfiable"  :"N",
-             "SZS status Theorem"             :"T",
-             "SZS status ContradictoryAxioms" :"T",
-             "SZS status Unsatisfiable"       :"T",
-             "SZS status Inappropriate"       :"F",
-             "SZS status Error"               :"F"}
+statusmap = {
+    "unknown": "F",
+    "exec failed": "F",
+    "SZS status GaveUp": "F",
+    "SZS status ResourceOut": "F",
+    "SZS status Satisfiable": "N",
+    "SZS status CounterSatisfiable": "N",
+    "SZS status Theorem": "T",
+    "SZS status ContradictoryAxioms": "T",
+    "SZS status Unsatisfiable": "T",
+    "SZS status Inappropriate": "F",
+    "SZS status Error": "F",
+}
 
-def rjust(amount): return lambda s: s.rjust(amount)
-def ljust(amount): return lambda s: s.ljust(amount)
 
-adjustmap     = defaultdict(lambda:rjust(12))
-adjustmap.update({"User time"         :rjust( 8),
-                  "Preprocessing time":rjust( 8),
-                  "Status"        :rjust( 1),
-                  "Failure"       :rjust(10),
-                  "Type"          :rjust( 8),
-                  "Config"        :rjust(12),
-                  "Filename"          :ljust(12),
-                  "Problem"       :ljust( 8)})
+def rjust(amount):
+    return lambda s: s.rjust(amount)
+
+
+def ljust(amount):
+    return lambda s: s.ljust(amount)
+
+
+adjustmap = defaultdict(lambda: rjust(12))
+adjustmap.update(
+    {
+        "User time": rjust(8),
+        "Preprocessing time": rjust(8),
+        "Status": rjust(1),
+        "Failure": rjust(10),
+        "Type": rjust(8),
+        "Config": rjust(12),
+        "Filename": ljust(12),
+        "Problem": ljust(8),
+    }
+)
+
 
 def firstvalue(dictionary):
     return next(iter(dictionary.values()))
+
 
 def clean_value(value):
     value = value.strip()
@@ -135,12 +170,12 @@ def clean_value(value):
 def remove_timestamp(line):
     # split prefixed timestamp X.XX/X.XX % or X.XX/X.XX #
     split = line.split("%", 1)
-    if len(split) == 2 and len(split[0])<25:
+    if len(split) == 2 and len(split[0]) < 25:
         return split[1].strip()
     else:
         split = line.split("#", 1)
-        if len(split) == 2 and len(split[0])<25 and split[0].find('(')==-1:
-            return "# "+split[1].strip()
+        if len(split) == 2 and len(split[0]) < 25 and split[0].find("(") == -1:
+            return "# " + split[1].strip()
         else:
             # might be: 0.00/0.00   exec failed: No such file or directory
             split = line.split("\t", 1)
@@ -148,7 +183,7 @@ def remove_timestamp(line):
                 return split[1].strip()
             if len(split) == 2 and split[1].startswith("Alarm clock"):
                 # print("Found", "# "+ split[1].strip())
-                return "# "+ split[1].strip()
+                return "# " + split[1].strip()
             else:
                 # line with only timestamp or other data
                 return ""
@@ -182,11 +217,11 @@ def make_entry(lines):
             line = line[2:]
         # print(line)
         split = line.split(":", 1)
-        key   = split[0].strip()
+        key = split[0].strip()
         # Correct for TPTP errors causing E parse error mistaken for a result
-        if(key.startswith("Type mismatch")):
+        if key.startswith("Type mismatch"):
             continue
-        if(key.startswith("partial match")):
+        if key.startswith("partial match"):
             continue
         value = clean_value(split[1]) if len(split) == 2 else ""
         if key.startswith("SZS status Inappropriate"):
@@ -202,81 +237,102 @@ def make_entry(lines):
             entry["Status"] = statusmap["exec failed"]
             entry["Failure"] = failuremap["exec failed"]
         elif key == "Problem":
-            if not value.startswith('%'):
-                entry[key] = (value.split(":", 1)[0].strip() + ".p")
+            if not value.startswith("%"):
+                entry[key] = value.split(":", 1)[0].strip() + ".p"
         elif key == "Failure":
             entry[key] = failuremap[clean_key(value, failuremap)]
         elif value != "":
             entry[key] = value
     return entry
 
+
 def process_file(data, features, archivename, path, fileopener, info):
     if verbose:
         print("Processing: ", path)
-    problemname   = basename(dirname(path))
-    configname    = "_".join(basename(dirname(dirname(path))).split("___")[1:])
-    mo            = version_re.search(basename(dirname(dirname(path))).split("_", 1)[0])
+    problemname = basename(dirname(path))
+    configname = "_".join(basename(dirname(dirname(path))).split("___")[1:])
+    mo = version_re.search(basename(dirname(dirname(path))).split("_", 1)[0])
     if mo:
         eversion = mo.group()
     else:
         eversion = "unknownVersion"
     fileextension = splitext(path)[-1]
-    filename      = basename(path)
-    if problemname and configname and fileextension == ".txt" \
-       and (("+" in problemname) or ("-" in problemname or ("_" in problemname) or ("^" in problemname))):
+    filename = basename(path)
+    if (
+        problemname
+        and configname
+        and fileextension == ".txt"
+        and (
+            ("+" in problemname)
+            or ("-" in problemname or ("_" in problemname) or ("^" in problemname))
+        )
+    ):
         entry = make_entry(fileopener(info).readlines())
         if entry:
-           if "Problem" not in entry:
-               entry["Problem"] = problemname
-           entry.update({"Configname":configname,
-                         "Filename":filename,
-                         "Archivename":archivename})
-           if int(entry.get("Proof object given clauses", 0)) > \
-              int(entry.get("Proof search given clauses", 0)):
-              #fix output error in e version 1.9.1pre005
-              swap(entry, "Proof object given clauses", "Proof search given clauses")
-           if "Status" not in entry:
-               entry["Status"] = statusmap["unknown"]
-               if "Failure" not in entry:
-                   entry["Failure"] = failuremap["unknown"]
-           if "Failure" not in entry:
-               entry["Failure"] = "success"
-           if "Version" not in entry:
-               entry["Version"] = eversion
-           if entry["Failure"] == failuremap["exec failed"]:
-               entry["Problem"] = problemname
-               entry["Version"] = eversion
-           if "Problem" in entry and entry["Problem"] in features:
-               entry.update(features[entry["Problem"]])
-           if not configname in data or \
-              not problemname in data[configname] \
-              or entry["Failure"]!=failuremap["unknown"]:
-               data[configname][problemname] = entry
+            if "Problem" not in entry:
+                entry["Problem"] = problemname
+            entry.update(
+                {
+                    "Configname": configname,
+                    "Filename": filename,
+                    "Archivename": archivename,
+                }
+            )
+            if int(entry.get("Proof object given clauses", 0)) > int(
+                entry.get("Proof search given clauses", 0)
+            ):
+                # fix output error in e version 1.9.1pre005
+                swap(entry, "Proof object given clauses", "Proof search given clauses")
+            if "Status" not in entry:
+                entry["Status"] = statusmap["unknown"]
+                if "Failure" not in entry:
+                    entry["Failure"] = failuremap["unknown"]
+            if "Failure" not in entry:
+                entry["Failure"] = "success"
+            if "Version" not in entry:
+                entry["Version"] = eversion
+            if entry["Failure"] == failuremap["exec failed"]:
+                entry["Problem"] = problemname
+                entry["Version"] = eversion
+            if "Problem" in entry and entry["Problem"] in features:
+                entry.update(features[entry["Problem"]])
+            data.append(entry)
 
-def swap(d,key1,key2):
-    d[key1],d[key2] = d[key2],d[key1]
+
+def swap(d, key1, key2):
+    d[key1], d[key2] = d[key2], d[key1]
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Parse Starexec Cluster Job Output")
-    parser.add_argument("infile", nargs="*",  help="input tar or zip files or directory structure")
+    parser.add_argument(
+        "infile", nargs="*", help="input tar or zip files or directory structure"
+    )
     parser.add_argument("--header", help="add csv header", action="store_true")
     parser.add_argument("--default", help="default value", default="-")
     parser.add_argument("--delimiter", help="csv delimiter", default=" ")
-    parser.add_argument("--metadata", help="add information parsed from file paths", action="store_true")
-    parser.add_argument("--compact", help="do not add alignment whitespace", action="store_true")
-    parser.add_argument("--features", help="add feature columns with features of the problem")
+    parser.add_argument(
+        "--metadata", help="add information parsed from file paths", action="store_true"
+    )
+    parser.add_argument(
+        "--compact", help="do not add alignment whitespace", action="store_true"
+    )
+    parser.add_argument(
+        "--features", help="add feature columns with features of the problem"
+    )
     parser.add_argument("--verbose", help="be verbose", action="store_true")
     return parser.parse_args()
+
 
 def read_features(path):
     features = defaultdict(dict)
     if isfile(args.features):
-        with open(args.features,"r") as featurefile:
+        with open(args.features, "r") as featurefile:
             for line in featurefile.readlines():
                 name, _, ptype = line.split(":")
                 name = name.strip()
                 ptype = ptype.strip()
-                if  ptype[0] == "H" or ptype[:2] == "UH":
+                if ptype[0] == "H" or ptype[:2] == "UH":
                     features[name]["Type"] = "horn"
                 elif ptype[:2] == "UU":
                     features[name]["Type"] = "unit"
@@ -291,12 +347,13 @@ def read_features(path):
         sys.exit(1)
     return features
 
+
 if __name__ == "__main__":
     global verbose
 
     verbose = False
 
-    data = defaultdict(dict)
+    data = []
     args = parse_args()
     if args.verbose:
         verbose = True
@@ -309,53 +366,89 @@ if __name__ == "__main__":
             for root, _, files in os.walk(infile):
                 for filename in files:
                     path = os.path.join(root, filename)
-                    process_file(data, features,
-                                 basename(dirname(infile)),
-                                 path,
-                                 lambda p: open(p, mode="rb"), path)
+                    process_file(
+                        data,
+                        features,
+                        basename(dirname(infile)),
+                        path,
+                        lambda p: open(p, mode="rb"),
+                        path,
+                    )
         elif tarfile.is_tarfile(infile):
             with tarfile.open(infile) as tfile:
                 for tinfo in tfile:
-                    process_file(data, features, basename(infile),
-                                 tinfo.name, tfile.extractfile, tinfo)
+                    process_file(
+                        data,
+                        features,
+                        basename(infile),
+                        tinfo.name,
+                        tfile.extractfile,
+                        tinfo,
+                    )
         elif zipfile.is_zipfile(infile):
             with zipfile.ZipFile(infile) as zfile:
                 for zinfo in zfile.infolist():
-                    process_file(data, features,
-                                 basename(infile),
-                                 zinfo.filename,
-                                 zfile.open, zinfo)
+                    process_file(
+                        data,
+                        features,
+                        basename(infile),
+                        zinfo.filename,
+                        zfile.open,
+                        zinfo,
+                    )
         else:
             print("Do not know how to open {}.".format(infile))
 
-    keys = set(chain.from_iterable(entry.keys()
-                                   for problems in data.values()
-                                   for entry in problems.values()))
-    fieldnames = firstkeys + sorted(keys.difference(set(firstkeys +
-                                                        removekeys +
-                                                        metakeys +
-                                                        featurekeys)))
+    df = (
+        pd.DataFrame.from_records(data)
+    )
+
+    print(df["rel_distance"])
+    df["rel_distance"] = df["rel_distance"].astype(int)
+    df["graph_construction_time"] = \
+        df["graph_construction_time"].astype(float)
+    df["neighbourhood_computation_time"] = \
+        df["neighbourhood_computation_time"].astype(float)
+    df = df.sort_values(["Problem", "rel_distance"], ascending=True)
+
+    print(df)
+    exit()
+
+    keys = set(data.keys())
+    fieldnames = firstkeys + sorted(
+        keys.difference(set(firstkeys + removekeys + metakeys + featurekeys))
+    )
     if args.metadata:
         fieldnames += metakeys
     if args.features:
         fieldnames += featurekeys
-    for configname, problems in data.items():
-        with open(protfile(configname), "w") as report:
+    print(data.items())
+    for problem_name, runs in data.items():
+        with open(protfile(problem_name), "w") as report:
             try:
-                report.write("# {0[Command]} \n".format(firstvalue(problems)))
+                report.write("# {0[Command]} \n".format(runs[0]))
             except KeyError:
                 report.write("# Could not find command\n")
-            report.writelines("# {:>2} {} \n".format(*pair)
-                              for pair in enumerate(fieldnames, 1))
+            report.writelines(
+                "# {:>2} {} \n".format(*pair) for pair in enumerate(fieldnames, 1)
+            )
             if not args.header:
                 report.write("#")
-            report.write(args.delimiter.join(fieldnames)+"\n")
-            for entrykey in sorted(problems.keys()):
-                if args.compact:
-                    values = [problems[entrykey].get(key,
-                                   args.default)
-                              for key in fieldnames]
-                else:
-                    values = [adjustmap[key](problems[entrykey].get(key, args.default))
-                              for key in fieldnames]
-                report.write(args.delimiter.join(values)+"\n")
+            report.write(args.delimiter.join(fieldnames) + "\n")
+            # print(runs)
+            for run in sorted(runs, key=lambda run: run["rel_distance"]):
+
+
+
+
+                # if args.compact:
+                #     values = [
+                #         runs[entrykey].get(key, args.default) for key in fieldnames
+                #     ]
+                # else:
+                #     values = [
+                #         adjustmap[key](runs[entrykey].get(key, args.default))
+                #         for key in fieldnames
+                #     ]
+                # print(values)
+                report.write(args.delimiter.join(run) + "\n")

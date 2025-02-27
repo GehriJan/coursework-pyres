@@ -7,7 +7,7 @@
 - Allgemein Komplexität analysieren und optimieren.
 - Kann ich den Graph nicht komplett als Matrix abbilden? ich bräuchte zwar trotzdem noch nodes für in/out, alle literale und so, aber vielleicht kann man die Konstruktion des Graphen vektorisieren und dann auch das Filtern nach relevance-neighbourhoods vektorisieren
 - unterschiedliche Relevanzfunktionen über spezifizierte Klasse mit abstraken Funktionen implementieren?
-
+- Plaisted nennt in seinem Paper diese Quelle: "S. Jefferson and D. Plaisted. Implementation of an improved relevance criterion. InFirst Conference on Artificial Intelligence Applications, pages 476–482, 1984" -> was heißt "improved relevance criterion? könnte das evtl auch implementiert werden?
 
 
 

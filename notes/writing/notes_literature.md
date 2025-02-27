@@ -29,7 +29,7 @@ Problem: With "dumb" Resolution algorithms, finding proofs for certain conclusio
 - Experimental Evaluation
 - Conclusion
 
-## [A relevance restriction strategy for automated deduction]("../../../../papers/literature/PY03.pdf") 
+## [A relevance restriction strategy for automated deduction](../../../../papers/literature/PY03.pdf) 
 - Abstract
     - *Question:*
         Why is

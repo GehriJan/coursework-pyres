@@ -30,28 +30,3 @@
   // for more options check the package documentation (https://typst.app/universe/package/supercharged-dhbw)
   header: header-config,
 )
-
-= Introduction
-= Theory
-== First-order logic
-== Current scientific landscape for clause selection
-== Alternating path theory
-= PyRes architecture
-= Design
-== Initial algorithm
-=== Ideas
-=== Result
-= Implementation
-== Original algorithm in practice
-== [Main improvement 1]
-== [Main improvement 2]
-  ...
-== [Main improvement N]
-== Main development drawbacks
-= Evaluation & validation
-== Implementation validation
-== Experimental setup
-== Experimental result
-== Evaluation of the experimental result
-= Future work
-= Conclusion
