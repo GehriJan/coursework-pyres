@@ -5,11 +5,7 @@
 
 Problem: With "dumb" Resolution algorithms, finding proofs for certain conclusions can be a resource and time intensive thing, especially for systems with lots of clauses.
 
-
-
-
-
-## [Teaching ATP by Example: PyRes 1.2]("../../../../papers/literature/978-3-030-51054-1.pdf")
+## [Teaching ATP by Example: PyRes 1.2](../../../../papers/literature/978-3-030-51054-1.pdf)
 - Introduction 
     - classification of pyres into scientific field; basic description
 - Preliminaries

@@ -30,3 +30,40 @@
   // for more options check the package documentation (https://typst.app/universe/package/supercharged-dhbw)
   header: header-config,
 )
+
+= Introduction
+
+= Theory
+
+== #acrf("FOL")
+
+// FOL Definitions
+Definitionen:
+- Domäne
+- Variablen
+- Funktionen (Konstanten)
+  -> Terme
+  - Prädikate
+    -> Atome
+    - Junktoren
+      -> Formel
+- Definition Literal
+- Definition Klausel
+
+// FOL Resolution
+- Normalisierung
+- Prozess der Resolution
+
+== Current clause selection strategies
+
+
+
+
+
+
+
+
+
+
+
+

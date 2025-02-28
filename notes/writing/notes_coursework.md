@@ -5,13 +5,21 @@
 - [ ] Introduction
 - [ ] Theory
     - [ ] First-order logic
+        - [ ] FOL Definitions
+        - [ ] FOL Resolution
     - [ ] Current scientific landscape for clause selection
+        - [ ] Symbol sharing -> MP09
+        - [ ] Finite models -> Pud07
+        - [ ] Machine Learning -> Urb07
+        - [ ] Sine Qua Non -> HV11
     - [ ] Alternating path theory
+        - [ ] Theory
+        - [ ] Central Thought
         - [ ] Hypotheses
             - [ ] Research Question 1: Does ap work as clause-selection strategy?
             - [ ] Research Question 2: How performant and scalable is ap as clause-selection strategy?
 - [ ] PyRes architecture
-- [ ] Design
+- [ ] Specification
     - [ ] Requirements for algorithm
     - [ ] Abstract Class
 - [ ] Implementation
@@ -30,5 +38,3 @@
     - [ ] Main development drawbacks
 - [ ] Future work
 - [ ] Conclusion
-
-

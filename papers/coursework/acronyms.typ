@@ -1,5 +1,5 @@
 #let acronyms = (
-  API: "Application Programming Interface",
+  FOL: "First order Logic",
   HTTP: "Hypertext Transfer Protocol",
   REST: "Representational State Transfer",
 )

@@ -11,6 +11,9 @@
 
 
 
+## Mögliche Anschlussthemen/Weitere interessante Fragen:
+- Bisher wird nur ein Filter vor dem Inferencing durchgeführt. Was wäre, wenn man die Klauseln nach ihrem Abstand zur Konklusion sortiert? 
+- Wie verträgt sich AP mit Equality Axiomen?
 
 
 
@@ -27,5 +30,5 @@
 
 
 
-- Iwann mal Equality + AP untersuchen
+
 
