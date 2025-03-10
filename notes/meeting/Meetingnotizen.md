@@ -211,7 +211,9 @@
 - [ ] Resolution allgemein beschreiben? oder direkt in ATP theory gehen?
 - [ ] Gute Standardwerke für FOL und ATP?
     - [ ] _"Melvin Fitting, First-Order Logic and Automated Theorem Proving, Springer Science & Business Media. 1990 ISBN 978-1-4612-2360-3."_ scheint ganz gut zu sein, ist aber kostenpflichtig
-    - [ ] 
+- [ ] Welche SZS Stati sollten in die Berechnung von Metriken einfließen?
+  - [ ] GaveUp, Inappropriate, Satisfiable, CounterSatisfiable, Theorem, ResourceOut
+- [ ]
 
 
 

@@ -375,7 +375,13 @@
     strong(it)
   }
 
-  set par(justify: true, leading: 1em)
+  set par(
+    justify: true,
+    leading: 0.9em,
+    spacing: 1em,
+    linebreaks: "optimized",
+    // first-line-indent: 1.5em,
+  )
 
   if (show-abstract and abstract != none) {
     align(center + horizon, heading(level: 1, numbering: none, outlined: false)[Abstract])
