@@ -205,16 +205,42 @@
 
 ## Meeting 13.03., 18:00 Uhr
 
-### Fragen
-- [ ] Welchen Grund hat es, dass momentan im Code `resource.getrusage` anstatt `time.time()` verwendet wird?
+### Implementierung
+- [ ] Parametrisierung über Runskripte läuft, runs auf starexec gestartet
+- [ ] Ergebnisse siehe Notebook
 
-- [ ] Resolution allgemein beschreiben? oder direkt in ATP theory gehen?
-- [ ] Gute Standardwerke für FOL und ATP?
-    - [ ] _"Melvin Fitting, First-Order Logic and Automated Theorem Proving, Springer Science & Business Media. 1990 ISBN 978-1-4612-2360-3."_ scheint ganz gut zu sein, ist aber kostenpflichtig
+Aktuelle Offene Dinge:
+- [ ] Alle Probleme auf Starexec zu runnen dauert zu lange
+    **- `pylib_e_multi.py` im E repo ermöglicht das laufen auf saturn rechner.**
+    - [ ] Vorauswahl für Probleme treffen? Besonders relevante Probleme selecten?
+        **- Eine Möglichkeit: Mit E ermitteln, bei welchen Problemen wieviele Ausgangsklauseln verwendet werden. -> Vielleicht nächstes Mal angehen**
+        **- Andere Möglichkeit: eine problemklasse wählen**
 - [ ] Welche SZS Stati sollten in die Berechnung von Metriken einfließen?
   - [ ] GaveUp, Inappropriate, Satisfiable, CounterSatisfiable, Theorem, ResourceOut
-- [ ]
+  - Siehe `genprot.py -> statusmap, zeile 120`, alle die nicht auf F gemappt werden
+- [ ] Welche Metriken soll ich genau berechnen um unterschiedliche Versionen zu evaluieren?
+    - Skalierbarkeit
+        **- allgemein nicht mean, wegen Ausreißerempfindlichkeit, sondern median**
+        **- [ ] Unterschiedliche x_values für GCT: Anzahl clauses, literals oder symbole allgemein**
+        **- [ ] x_values für NCT: rel_distance**
+    **- Venn diagramm für die Probleme, die vorher und nachher gelöst werden können**
 
+### Studienarbeit
 
+Theoretisches Kapitel:
+**- [ ] In Schulz' Doktorarbeit schauen**
+- [ ] Gute Primärquelle für FOL und ATP?
+    - [ ] _"Melvin Fitting, First-Order Logic and Automated Theorem Proving, Springer Science & Business Media. 1990 ISBN 978-1-4612-2360-3."_ scheint ganz gut zu sein, ist aber kostenpflichtig
+        **- [ ] Allgemeine Definitionen gut, für Praxis schlecht**
+        **- [ ] Chang und Lee paper, kann Schulz ausleihen**
+    **- [ ] Bib über Fernleihe befragen**
+- [ ] Brauch ich Literaturverweise für basic logische Terminologie?
+    **- [ ] nicht viel, siehe Doktorarbeit**
 
+Sonstiges:
+- [ ] Zitieren mit Seitenzahl?
+    **- [ ] Eigentlich nicht, eher bei Handbooks wo unterschiedliches zusammengefasst ist**
 
+**NEXT STEPS:**
+**- [ ] Starexec schauen, dass es schneller geht**
+**- [ ] Studienarbeit weiter schreiben**
