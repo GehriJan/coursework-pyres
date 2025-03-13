@@ -4,6 +4,7 @@
   author    = {{International Organization for Standardization}},
   year      = {2015},
 }
+
 @incollection{20012115,
   title = {Concept index},
   editor = {Alan Robinson and Andrei Voronkov},
@@ -36,7 +37,7 @@
   This chapter discusses the formulas that are certain finite strings of symbols. The “first” in the phrase “first-order logic” is to distinguish this form of logic from stronger logics, such as second-order or weak second-order logic, where certain extralogical notions (set or natural number) are taken as given in advance. The chapter provides information of what can and what cannot be expressed in first-order logic. Most of the examples are taken from the wealth of notions in modern algebra with which most mathematicians have at least a nodding acquaintance. The chapter also discusses many-sorted first-order logic, ω-logic, weak second-order logic, Infinitary logic, Logic with new quantifiers, and abstract model theory.}
 }
 
-@InProceedings{teaching_by_design,
+@InProceedings{teaching_by_example,
   author="Schulz, Stephan and Pease, Adam",
   editor="Peltier, Nicolas and Sofronie-Stokkermans, Viorica",
   title="Teaching Automated Theorem Proving by Example: PyRes 1.2",
@@ -82,4 +83,130 @@
   year = {2013},
   isbn = {978-3-658-03079-7},
   doi = {https://doi.org/10.1007/978-3-658-03079-7},
+}
+
+//10.5555/1218615.1218621
+@article{e_1,
+  author = {Schulz, Stephan},
+  title = {E - a brainiac theorem prover},
+  year = {2002},
+  issue_date = {August 2002},
+  publisher = {IOS Press},
+  address = {NLD},
+  volume = {15},
+  number = {2,3},
+  issn = {0921-7126},
+  abstract = {We describe the superposition-based theorem prover E. E is a sound and complete prover for clausal first order logic with equality. Important properties of the prover include strong redundancy elimination criteria, the DISCOUNT loop proof procedure, a very flexible interface for specifying search control heuristics, and an efficient inference engine. We also discuss strength and weaknesses of the system.},
+  journal = {AI Commun.},
+  month = aug,
+  pages = {111–126},
+  numpages = {16},
+  keywords = {E, Theorem proving, rewriting, search control, superposition},
+  url={https://dl.acm.org/doi/abs/10.5555/1218615.1218621}
+}
+
+//10.1007/978-3-030-29436-6_29
+@InProceedings{e_2,
+  author="Schulz, Stephan and Cruanes, Simon and Vukmirovi{\'{c}}, Petar",
+  editor="Fontaine, Pascal",
+  title="Faster, Higher, Stronger: E 2.3",
+  booktitle="Automated Deduction -- CADE 27",
+  year="2019",
+  publisher="Springer International Publishing",
+  address="Cham",
+  pages="495--507",
+  abstract="E 2.3 is a theorem prover for many-sorted first-order logic with equality. We describe the basic logical and software architecture of the system, as well as core features of the implementation. We particularly discuss recently added features and extensions, including the extension to many-sorted logic, optional limited support for higher-order logic, and the integration of SAT techniques via PicoSAT. Minor additions include improved support for TPTP standard features, always-on internal proof objects, and lazy orphan removal. The paper also gives an overview of the performance of the system, and describes ongoing and future work.",
+  isbn="978-3-030-29436-6",
+  doi="10.1007/978-3-030-29436-6_29",
+}
+
+@misc{e_gh,
+  author = {Schulz, Stephan},
+  title = {eprover},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/eprover/eprover}},
+}
+
+@InProceedings{vampire_1,
+  author="Kov{\'a}cs, Laura and Voronkov, Andrei",
+  editor="Sharygina, Natasha and Veith, Helmut",
+  title="First-Order Theorem Proving and Vampire",
+  booktitle="Computer Aided Verification",
+  year="2013",
+  publisher="Springer Berlin Heidelberg",
+  address="Berlin, Heidelberg",
+  pages="1--35",
+  abstract="In this paper we give a short introduction in first-order theorem proving and the use of the theorem prover Vampire. We discuss the superposition calculus and explain the key concepts of saturation and redundancy elimination, present saturation algorithms and preprocessing, and demonstrate how these concepts are implemented in Vampire. Further, we also cover more recent topics and features of Vampire designed for advanced applications, including satisfiability checking, theory reasoning, interpolation, consequence elimination, and program analysis.",
+  doi="10.1007/978-3-642-39799-8_1",
+}
+
+@misc{vampire_gh,
+  title = {vampire},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/vprover/vampire},
+}
+
+//10.1007/978-3-642-02959-2_10
+@InProceedings{spass_1,
+  author="Weidenbach, Christoph and Dimova, Dilyana and Fietzke, Arnaud and Kumar, Rohit and Suda, Martin and Wischnewski, Patrick",
+  editor="Schmidt, Renate A.",
+  title="SPASS Version 3.5",
+  booktitle="Automated Deduction -- CADE-22",
+  year="2009",
+  publisher="Springer Berlin Heidelberg",
+  address="Berlin, Heidelberg",
+  pages="140--145",
+  abstract="SPASS is an automated theorem prover for full first-order logic with equality and a number of non-classical logics. This system description provides an overview of our recent developments in SPASS 3.5 including subterm contextual rewriting, improved split backtracking, a significantly faster FLOTTER implementation with additional control flags, completely symmetric implementation of forward and backward redundancy criteria, faster parsing with improved support for big files, faster and extended sort module, and support for include commands in input files. Finally, SPASS 3.5 can now parse files in TPTP syntax, comes with a new converter tptp2dfg and is distributed under a BSD style license.",
+  isbn="978-3-642-02959-2",
+  doi="10.1007/978-3-642-02959-2_10",
+}
+
+@misc{spass_gh,
+  title = {tspass},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/michel-ludwig/tspass},
+}
+
+//10.1007/978-3-540-71070-7_24
+@InProceedings{iprover_1,
+  author="Korovin, Konstantin",
+  editor="Armando, Alessandro and Baumgartner, Peter and Dowek, Gilles",
+  title="iProver -- An Instantiation-Based Theorem Prover for First-Order Logic (System Description)",
+  booktitle="Automated Reasoning",
+  year="2008",
+  publisher="Springer Berlin Heidelberg",
+  address="Berlin, Heidelberg",
+  pages="292--298",
+  abstract="iProver is an instantiation-based theorem prover which is based on Inst-Gen calculus, complete for first-order logic. One of the distinctive features of iProver is a modular combination of instantiation and propositional reasoning. In particular, any state-of-the art SAT solver can be integrated into our framework. iProver incorporates state-of-the-art implementation techniques such as indexing, redundancy elimination, semantic selection and saturation algorithms. Redundancy elimination implemented in iProver include: dismatching constraints, blocking non-proper instantiations and propositional-based simplifications. In addition to instantiation, iProver implements ordered resolution calculus and a combination of instantiation and ordered resolution. In this paper we discuss the design of iProver and related implementation issues.",
+  isbn="978-3-540-71070-7",
+  doi="10.1007/978-3-540-71070-7_24",
+}
+
+@misc{iprover_gh,
+  title = {iprover},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/edechter/iprover},
+}
+
+@misc{python_history,
+  title = {Python - History and License},
+  howpublished = {\url{https://docs.python.org/3/license.html}},
+  note = {Accessed: 2025-03-12},
+}
+@article{sanner1999python,
+  title={Python: a programming language for software integration and development},
+  author={Sanner, Michel F and others},
+  journal={J Mol Graph Model},
+  volume={17},
+  number={1},
+  pages={57--61},
+  year={1999}
 }
