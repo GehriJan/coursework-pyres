@@ -6,8 +6,8 @@ The third number indicates minor changes like bug fixes.
 
 | Vers. | Feature description | commit |
 | ----- | --------------- | ------ |
-| 1.0.0 | First working version of set-based clause selection| f58e199 | 
-| X.X.X | word | xxxxxx |
+| 1.0.0 | First working version of set-based clause selection| f58e199/bdd8c0b | 
+| 1.1.0 | No list data structures, only set | 2f8e185 |
 | X.X.X | word | xxxxxx |
 | X.X.X | word | xxxxxx |
 | X.X.X | word | xxxxxx |

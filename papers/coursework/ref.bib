@@ -210,3 +210,49 @@
   pages={57--61},
   year={1999}
 }
+
+
+
+// APSP matrix algorithm
+@article{SEIDEL1995400,
+  title = {On the All-Pairs-Shortest-Path Problem in Unweighted Undirected Graphs},
+  journal = {Journal of Computer and System Sciences},
+  volume = {51},
+  number = {3},
+  pages = {400-403},
+  year = {1995},
+  issn = {0022-0000},
+  doi = {https://doi.org/10.1006/jcss.1995.1078},
+  url = {https://www.sciencedirect.com/science/article/pii/S0022000085710781},
+  author = {R. Seidel},
+  abstract = {We present an algorithm, APD, that solves the distance version of the all-pairs-shortest-path problem for undirected, unweighted n-vertex graphs in time O(M(n) log n), where M(n) denotes the time necessary to multiply two n × n matrices of small integers (which is currently known to be o(n2.376)). We also address the problem of actually finding a shortest path between each pair of vertices and present a randomized algorithm that matches APD in its simplicity and in its expected running time.}
+}
+//APSP matrix algorithm
+@article{GALIL1997103,
+  title = {All Pairs Shortest Distances for Graphs with Small Integer Length Edges},
+  journal = {Information and Computation},
+  volume = {134},
+  number = {2},
+  pages = {103-139},
+  year = {1997},
+  issn = {0890-5401},
+  doi = {https://doi.org/10.1006/inco.1997.2620},
+  url = {https://www.sciencedirect.com/science/article/pii/S0890540197926201},
+  author = {Zvi Galil and Oded Margalit},
+  abstract = {There is a way to transform the All Pairs Shortest Distances (APSD) problem where the edge lengths are integers with small (⩽M) absolute value into a problem with edge lengths in {−1,0,1}. This transformation allows us to use the algorithms we developed earlier ([1]) and yields quite efficient algorithms. In this paper we give new improved algorithms for these problems. Forn=|V| the number of vertices,Mthe bound on edge length, andωthe exponent of matrix multiplication, we get the following results: 1. A directed nonnegative APSD(n,M) algorithm which runs inO(T(n,M)) time, where[formula]2. A undirected APSD(n,M) algorithm which runs inO(M(ω+1)/2nωlog(Mn)) time.}
+}
+
+// Matrix based improved: https://arxiv.org/pdf/2208.04514
+@inproceedings{Feng_2024,
+   series={ICS ’24},
+   title={DAWN: Matrix Operation-Optimized Algorithm for Shortest Paths Problem on Unweighted Graphs},
+   url={http://dx.doi.org/10.1145/3650200.3656600},
+   DOI={10.1145/3650200.3656600},
+   booktitle={Proceedings of the 38th ACM International Conference on Supercomputing},
+   publisher={ACM},
+   author={Feng, Yelai and Wang, Huaixi and Zhu, Yining and Liu, Xiandong and Lu, Hongyi and Liu, Qing},
+   year={2024},
+   month=may, pages={1–13},
+   collection={ICS ’24}
+}
+
