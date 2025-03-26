@@ -142,8 +142,8 @@
   }
 
   // save heading and body font families in variables
-  let body-font = "Computer Modern"
-  let heading-font = "Computer Modern"
+  let body-font = "New Computer Modern"
+  let heading-font = "New Computer Modern"
 
   // customize look of figure
   set figure.caption(separator: [ --- ], position: bottom)

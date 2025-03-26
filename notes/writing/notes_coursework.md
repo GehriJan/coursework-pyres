@@ -21,7 +21,7 @@
 - [ ] PyRes
     - [x] Python
     - [x] PyRes in contrast to other theorem provers
-    - 
+    - [ ] Architecture
 - [ ] Specification
     - [ ] Requirements for algorithm
     - [ ] Abstract Class
