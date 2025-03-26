@@ -2,7 +2,6 @@
 
 ## Programmierung
 feat
-- [ ] output des Graphen in Graphviz
 
 refactor
 - [ ]
@@ -11,7 +10,7 @@ doc
 - [ ]
 
 chore
-- [ ]
+- [ ] branches auf PyRes mergen
 
 ## Datenanalyse
 

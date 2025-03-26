@@ -244,3 +244,29 @@ Sonstiges:
 **NEXT STEPS:**
 **- [ ] Starexec schauen, dass es schneller geht**
 **- [ ] Studienarbeit weiter schreiben**
+
+
+## Meeting 26.03., 13:00 Uhr
+
+- Starexec geht wieder wie gedacht
+**- Wallclocktime = 2* CPU time setzen**
+
+### Writing
+- Pyres beschreibung fast fertig
+
+### Programmierung
+- Ansätze
+    - Set-based anstatt listen
+        - sieht nach gutem Improvement aus
+    - Matrix-based
+        - gutes Paper gefunden [link](../../papers/literature/3650200.3656600.pdf)
+
+### Sonstiges
+- Graph von Alternating Path nicht nur als Filter, sondern auch als Klauselselektionsheuristik?
+    **- Problem: was macht man mit neuen klauseln?**
+    **- vllt. trotzdem für die ursprünglichen klauseln gut**
+
+**NEXT STEPS**
+**- Alte Versionen mit angepasster Wallclock time**
+**- Kapiteln in studienarbeit fertig schreiben**
+**- Matrix-zeug einarbeiten & implementieren**
