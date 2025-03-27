@@ -19,20 +19,35 @@ jobs:
     wall_clock_timeout: 5
     cpu_clock_timeout: 5
     rel_distances:
+  5135: &5135
+    id: 5135
+    wall_clock_timeout: 10
+    cpu_clock_timeout: 5
+    rel_distances:
+  5136: &5136
+    id: 5136
+    wall_clock_timeout: 10
+    cpu_clock_timeout: 5
+    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
+  5137: &5137
+    id: 5137
+    wall_clock_timeout: 10
+    cpu_clock_timeout: 5
+    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
 
 versions:
   0.0.0:
     description: No alternating path implementation
     commits:
-    starexec_runs: [*5112]
+    starexec_runs: [*5112, *5135]
   1.0.0:
     description: First working version of set-based clause selection
     commits: [f58e199, bdd8c0b]
-    starexec_runs: [*5054, *5055]
+    starexec_runs: [*5054, *5055, *5136]
   1.1.0:
     description: No list data structures, only set
     commits: [2f8e185]
-    starexec_runs: [*5111]
+    starexec_runs: [*5111, *5137]
   X.X.X:
     description:
     commits: []
