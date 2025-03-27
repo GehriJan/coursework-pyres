@@ -18,10 +18,10 @@
         - [ ] Hypotheses
             - [ ] Research Question 1: Does ap work as clause-selection strategy?
             - [ ] Research Question 2: How performant and scalable is ap as clause-selection strategy?
-- [ ] PyRes
+- [x] PyRes
     - [x] Python
     - [x] PyRes in contrast to other theorem provers
-    - [ ] Architecture
+    - [x] Architecture
 - [ ] Specification
     - [ ] Requirements for algorithm
     - [ ] Abstract Class
