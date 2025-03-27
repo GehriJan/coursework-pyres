@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ZjsDQQ8L4Em5IizKKJiH" name="Page-1">
-        <mxGraphModel dx="1771" dy="701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1621" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -73,7 +73,7 @@
                 <mxCell id="28" value="Pandas&lt;br&gt;Dataframe&lt;br&gt;df_se_indi" style="html=1;dashed=0;whitespace=wrap;" parent="1" vertex="1">
                     <mxGeometry x="440" y="370" width="120" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="&lt;ul&gt;&lt;li&gt;Problem name&lt;/li&gt;&lt;li&gt;Result (success, error, etc.)&lt;/li&gt;&lt;li&gt;Results for different r's&lt;br&gt;&lt;/li&gt;&lt;li&gt;CPU time&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;dashed=1;" parent="1" vertex="1">
+                <mxCell id="29" value="&lt;ul&gt;&lt;li&gt;Problem name&lt;/li&gt;&lt;li&gt;Result (success, error, etc.)&lt;/li&gt;&lt;li&gt;Results for different r&#39;s&lt;br&gt;&lt;/li&gt;&lt;li&gt;CPU time&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;dashed=1;" parent="1" vertex="1">
                     <mxGeometry x="180" y="338.75" width="220" height="112.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;dashed=1;" parent="1" source="31" target="33" edge="1">
