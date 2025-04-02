@@ -48,6 +48,10 @@ versions:
     description: No list data structures, only set
     commits: [2f8e185]
     starexec_runs: [*5111, *5137]
+  1.1.1:
+    description: Fixing the adding of new neighbours to neighbourhood
+    commits: [5866387]
+    starexec_runs: []
   X.X.X:
     description:
     commits: []
