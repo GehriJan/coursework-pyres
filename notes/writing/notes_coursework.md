@@ -22,9 +22,9 @@
     - [x] Python
     - [x] PyRes in contrast to other theorem provers
     - [x] Architecture
-- [ ] Specification
-    - [ ] Requirements for algorithm
-    - [ ] Abstract Class
+- [x] Specification
+    - [x] Requirements for algorithm
+    - [x] Abstract Class
 - [ ] Implementation
     - [ ] Approach 1: Set-based
         - [ ] V1.1: Set Methods

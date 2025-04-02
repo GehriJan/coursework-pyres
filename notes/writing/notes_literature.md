@@ -61,7 +61,25 @@ Problem: With "dumb" Resolution algorithms, finding proofs for certain conclusio
 4. Relevance distance and refutations
 
 
-## []() 
+## [DAWN](../../papers/literature/3650200.3656600.pdf) 
+
+### Questions
+- What is the adjacency matrix?
+- What is the WCC?
+    - Stands for Weakly Connected Component
+- What is the eccentricity of a node?
+    - the maximal distance to any other node in the graph
+- What is the average connected probability?
+- What is the difference between CSR and CSC?
+
+### Contents
+
+
+
+
+
+
+
 
 
 ## []() 

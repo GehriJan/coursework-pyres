@@ -270,3 +270,9 @@ Sonstiges:
 **- Alte Versionen mit angepasster Wallclock time**
 **- Kapiteln in studienarbeit fertig schreiben**
 **- Matrix-zeug einarbeiten & implementieren**
+
+
+## Meeting 15.04. 11:00 Uhr
+
+### Fragen
+- "rel_distance_Plaisted = rel_distance_PyRes - 1" -> ist das schlimm?

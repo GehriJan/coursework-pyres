@@ -1,5 +1,10 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "typst-dhbw-template/lib.typ": *
+#import "@preview/cetz:0.3.4": canvas, draw
+#import draw: line, content, rect, on-layer
+
+
+
 
 #let header-config = (
   display: true,
@@ -11,15 +16,19 @@
 
 
 
-
 // ctheorems
-#let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee"))
+#let theorem = thmbox("theorem", "Theorem", fill: rgb("#f0f0f0"))
 #let corollary = thmplain(
   "corollary",
   "Corollary",
   base: "theorem",
   titlefmt: strong
 )
-#let definition = thmbox("definition", "Definition", inset: (x: 1.2em, top: 1em))
+#let definition = thmbox(
+  "definition",
+  "Definition",
+  inset: (x: 1.2em, top: 1em, bottom: 1em),
+  fill: rgb("#f8f8f8"),
+)
 #let example = thmplain("example", "Example").with(numbering: none)
 #let proof = thmproof("proof", "Proof")
