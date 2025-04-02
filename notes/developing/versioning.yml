@@ -1,58 +1,72 @@
 jobs:
-  5054: &5054
+  5054:
     id: 5054
+    apt_version: 1.0.0
     wall_clock_timeout: 5
     cpu_clock_timeout: 5
     rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5055: &5055
+  5055:
     id: 5055
+    apt_version: 1.0.0
     wall_clock_timeout: 3
     cpu_clock_timeout: 3
     rel_distances: [2.0, 3.0, 8.0, 21.0, 54.0, nan]
-  5111: &5111
+  5111:
     id: 5111
+    apt_version: 1.1.0
     wall_clock_timeout: 5
     cpu_clock_timeout: 5
     rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5112: &5112
+  5112:
     id: 5112
-    wall_clock_timeout: 5
-    cpu_clock_timeout: 5
+    apt_version: 0.0.0
+    wall_clock_timeout: 5 # really? -> check all thos with the times in info.csv
+    cpu_clock_timeout: 5 # really?
     rel_distances:
-  5135: &5135
+  5135:
     id: 5135
+    apt_version: 0.0.0
+    wall_clock_timeout: 10 # really?
+    cpu_clock_timeout: 5 # really?
+    rel_distances:
+  5136:
+    id: 5136
+    apt_version: 1.0.0
+    wall_clock_timeout: 10
+    cpu_clock_timeout: 5
+    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
+  5137:
+    id: 5137
+    apt_version: 1.1.0
+    wall_clock_timeout: 10
+    cpu_clock_timeout: 5
+    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
+  5139:
+    id: 5139
+    apt_version: 1.1.1
+    wall_clock_timeout: 10
+    cpu_clock_timeout: 5
+    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
+  5151:
+    id: 5151
+    apt_version: 0.0.0
     wall_clock_timeout: 10
     cpu_clock_timeout: 5
     rel_distances:
-  5136: &5136
-    id: 5136
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5137: &5137
-    id: 5137
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
 
 versions:
   0.0.0:
     description: No alternating path implementation
     commits:
-    starexec_runs: [*5112, *5135]
   1.0.0:
     description: First working version of set-based clause selection
     commits: [f58e199, bdd8c0b]
-    starexec_runs: [*5054, *5055, *5136]
   1.1.0:
     description: No list data structures, only set
     commits: [2f8e185]
-    starexec_runs: [*5111, *5137]
   1.1.1:
     description: Fixing the adding of new neighbours to neighbourhood
     commits: [5866387]
-    starexec_runs: []
   X.X.X:
     description:
     commits: []
-    starexec_runs: []
