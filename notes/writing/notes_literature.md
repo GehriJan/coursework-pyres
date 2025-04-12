@@ -65,6 +65,8 @@ Problem: With "dumb" Resolution algorithms, finding proofs for certain conclusio
 
 ### Questions
 - What is the adjacency matrix?
+    - The matrix-form of a graph
+- What are attributes of the adjacency matrix?
 - What is the WCC?
     - Stands for Weakly Connected Component
 - What is the eccentricity of a node?
@@ -73,13 +75,5 @@ Problem: With "dumb" Resolution algorithms, finding proofs for certain conclusio
 - What is the difference between CSR and CSC?
 
 ### Contents
-
-
-
-
-
-
-
-
 
 ## []() 

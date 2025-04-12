@@ -1,4 +1,4 @@
-jobs:
+starexec_jobs:
   5054:
     id: 5054
     apt_version: 1.0.0
