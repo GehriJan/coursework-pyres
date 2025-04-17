@@ -267,12 +267,27 @@ Sonstiges:
     **- vllt. trotzdem für die ursprünglichen klauseln gut**
 
 **NEXT STEPS**
-**- Alte Versionen mit angepasster Wallclock time**
-**- Kapiteln in studienarbeit fertig schreiben**
-**- Matrix-zeug einarbeiten & implementieren**
+**- [x] Alte Versionen mit angepasster Wallclock time**
+**- [x] Kapiteln in studienarbeit fertig schreiben**
+**- [ ] Matrix-zeug einarbeiten & implementieren**
 
 
 ## Meeting 15.04. 11:00 Uhr
 
-### Fragen
-- "rel_distance_Plaisted = rel_distance_PyRes - 1" -> ist das schlimm?
+## Development
+- `rel_distance_Plaisted = rel_distance_PyRes - 1` -> ist das schlimm?
+**2021 Version von data_structures_algorithms**
+- Testing -> pyunit
+- Plotting des Graphen
+    - Nicht-inkludierte Klauseln einfach als eigenes set
+- Aktueller Stand Saturn **-> ist dran**
+**- Über cli-argument: reine Klauselselektion implementieren**
+
+## Studienarbeit
+- Draft von "Pyres" und "Specification" geschrieben
+
+**NEXT STEPS:**
+**- [x] Testing implementieren**
+**- [x] Ausgabe der Nachbarschafts-klauseln implementieren**
+**- [ ] Plotting des Graphen implementieren**
+**- [ ] Ansatz 2.0.0 implementieren**

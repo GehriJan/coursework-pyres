@@ -3,6 +3,10 @@
 ## Outline
 
 - [ ] Introduction
+    - [ ] thematic guide
+    - [ ] What is this for a work?
+    - [ ] What is the goal of this work?
+    - [ ] Chapter structure
 - [ ] Theory
     - [ ] First-order logic
         - [ ] FOL Definitions
