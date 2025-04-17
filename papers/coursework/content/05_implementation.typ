@@ -8,12 +8,12 @@
 
 With this set-based approach, the data structures have different layers:
 
-The most basic data structures are the classes `Node` and `Edge`. Each node contains a clause, a literal of that clause and a direction, namely `"in"` or `"out"`. Clauses and literals are implemented with the already available corresponding classes; the direction is implemented as simple string.
+The most basic data structures are the classes `Node` and `Edge`. Each node contains a clause, a literal of that clause and a direction, namely `"in"` or `"out"`. Clauses and literals are implemented with the already available corresponding classes; the direction is implemented as a simple string.
 Each edge contains two nodes.
 For both classes, a string representation for printing and debugging has been implemented.
 
 Nodes and edges are organized in different sets (hence _set-based_).
-For algorithmic simplicity, nodes are seperated into two sets, one containing all with direction `"in"`, the other containing all with direction `"out"`. Edges are aggregated in one set.
+For algorithmic simplicity, nodes are seperated into two sets, one containing all with direction `"in"`, the other containing all with direction `"out"`. Edges are aggregated in a single set.
 
 === Graph construction algorithm
 

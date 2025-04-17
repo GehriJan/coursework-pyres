@@ -42,7 +42,7 @@ Apart from those, there are multiple modularized components: `signature` provide
 To ensure an easy learning curve, PyRes comes in three consecutive forms:
 1. *`pyres-simple`*, a minimal version for clausal logic.
 2. *`pyres-cnf`*, adding heuristics, indexing and sub-sumption.
-3. *`pyres-fof`*, full support for #acrs("FOL").
+3. *`pyres-fof`*, full support for #acrs("FOL") with equality.
 
 == Functionality
 

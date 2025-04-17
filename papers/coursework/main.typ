@@ -48,3 +48,5 @@
 #include "content/04_specification.typ"
 
 #include "content/05_implementation.typ"
+
+#include "content/06_evaluation.typ"

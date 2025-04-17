@@ -48,22 +48,25 @@ We use the problem "PUZ001-1" of the #acrf("TPTP")-dataset as an example:
 #pagebreak()
 == Clause selection
 
+Clause selection is the problem of identifying and selecting those clauses of a logical problem, that are necessary and sufficient for a full proof. On the one hand, failing to identify necessary clauses prevents a successfull proof, on the other hand, selecting irrelevant clauses can slow down the proof algorithm.
+
 In general, one has to differentiate between two types of clause selection: clause selection _before_ saturation and clause selection _during_ saturation.
 While the first one functions like a filter in the prover-pipeline, the second one serves as a heuristic for finding proofs faster.
-In a worst case scenario, the first one can prevent a successful output by removing important clauses, whilst the second can only delay the dealing with a needed clause.
+In a worst case scenario, the first one can prevent a successful output by removing important clauses, whilst the second can only delay the consideration of a needed clause.
 Oftentimes, the same principle idea can be applied to implement both kinds of selections.
-This coursework focuses on the first kind of selection (for the full pipeline, see also @pyres-apt-pipeline). For that, there are different approaches:
+This coursework focuses on the first kind of selection (for the full pipeline, see @pyres-apt-pipeline). For that, there are different approaches:
 
 // Reiff and Schellhorn - coming from the perspective of software verification - propose an algorithm for removing certain axioms.
 // For this reduction, they identify four criterions: the _minimality criterion_, the _structure criterion_, the _specification criterion_ and the _recursion criterion_.
 
-Meng and Paulson @symbol_sharing_relevance introduced an approach based on the sharing of symbols. They essentially computed a score for each clause (i.e. the number of relevant symbols divided by the total number of symbols) and accept all clauses, whose score exceeds some pass mark $0 < p < 1$.
+Meng and Paulson @symbol_sharing_relevance introduced an approach based on the sharing of symbols. They essentially computed a score for each clause (i.e. the number of relevant symbols divided by the total number of symbols) and accepted all clauses, whose score exceeds some pass mark $0 < p < 1$.
 All symbols of accepted clauses are then regarded as relevant and the procedure repeats iteratively. The passmark is increasing (and therefore getting stricter) every iteration with the formula $p_(i+1) = p_i + (1-p_i)/c$, c being a parameter for convergence. They found $p = 0.6$ and $c = 2.4$ to be effective.
 Although the approach is farely simply, it increased the number of problems solved for a given time limit for E @e_1, SPASS @spass_1 and Vampire @vampire_1.
 
 Pudlak @semantic_selection introduced an approach where relevance is computed using finite models.
-In his algorithm, a model $M_0$ of ${not C_(c o n j)}$ ($c_(c o n j)$ being the conjecture). Now, a premise $c_0$ avoiding $M_0$ is selected, and a new model $M_1 tack.r.double {not C_(c o n j), C_0}$ is constructed. This procedure is repeated until no model can be found. The set of premises ${C_0, C_1, ..., C_n}$ is now treated as a candidate for proving the theory. This idea was implemented in SPASS @spass_1 by Sutcliffe and Puzis. The algorithm is able to reuse interpretations in different proofs. It also does not become ineffective concerning memory when proofs take more time, a problem other provers suffer. On the other hand, the number of computed interpretations can get really high, making it ineffective especially for problems with large numbers of premises.
+In his algorithm, a model $M_0$ of ${not C_(c o n j)}$ ($C_(c o n j)$ being the conjecture). Now, a premise $C_0$ avoiding $M_0$ is selected, and a new model $M_1 tack.r.double {not C_(c o n j), C_0}$ is constructed. This procedure is repeated until no model can be found. The set of premises ${C_0, C_1, ..., C_n}$ is now treated as a candidate for proving the theory. This idea was implemented in SPASS @spass_1 by Sutcliffe and Puzis. The algorithm is able to reuse interpretations in different proofs. It also does not become ineffective concerning memory when proofs take more time, a problem other provers suffer from. On the other hand, the number of computed interpretations can get really high, making it ineffective for problems with large numbers of premises.
 
+//todo: more other methods
 
 == Clause selection with #acrs("APT")
 
@@ -72,7 +75,7 @@ In his algorithm, a model $M_0$ of ${not C_(c o n j)}$ ($c_(c o n j)$ being the 
 === Terminology
 For describing #acr("APT"), the following terminology is introduced:
 
-The relation $eq.triple$ is used to denote syntactic identity, meaning
+The relation $eq.triple$ denotes syntactic identity, meaning
 $A eq.triple A$,
 $not A eq.triple not A$,
 $A eq.triple not not A$,
@@ -103,7 +106,7 @@ The _relevance distance_ $d_S$ is defined
 2. between a subset $T in S$ and a clause $C in S$ as the shortest path from a clause in $T$ to $C$: $ d_S (T,C) =  min{d_S (D,C): D in T} $
 ]
 
-If $d_S (C_1, C_2) != infinity$, $C_1$ and $C_2$ are _relevance connected_ in $S$. A set of clauses $S' subset.eq S$ is relevance connected, iff every pair of two clauses in $S$ is relevance connected.
+If $d_S (C_1, C_2) != infinity$, $C_1$ and $C_2$ are _relevance connected_ in $S$. A set of clauses $S' subset.eq S$ is relevance connected, if every pair of two clauses in $S$ is relevance connected.
 
 #definition("Relevance neighbourhood")[\
 The _relevance neighbourhood_ from $T subset.eq S$ regarding the relevance distance $n$ is defined as
