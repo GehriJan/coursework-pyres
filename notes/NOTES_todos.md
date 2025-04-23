@@ -12,6 +12,8 @@
 - [ ] tests: seperate different test runs
 - [ ] tests: incorporate false input values? 
 
+- [ ] fix: fix typo in fofspec.py:53
+
 
 ## Writing
 - [ ] Unterschiedliche Klauselselektionen beschreiben <2025-04-01>
