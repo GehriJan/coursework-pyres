@@ -3,4 +3,6 @@
 	url = https://www.github.com/EProver/PyRes
 [submodule "analysis_data"]
 	path = src/analysis_data
+[submodule "DED-TREFF-2025"]
+    path = papers/DED-TREFF-2025
 	
