@@ -291,3 +291,33 @@ Sonstiges:
 **- [x] Ausgabe der Nachbarschafts-klauseln implementieren**
 **- [ ] Plotting des Graphen implementieren**
 **- [ ] Ansatz 2.0.0 implementieren**
+
+
+## Meeting 09.05.
+
+- [ ] Starexec momentan nicht verfügbar
+    **- [x] Geoff nochmal nachfragen**
+- [ ] Vorallem die Studienarbeit sollte fertig werden
+    **- [ ] jede Woche ein chapter**
+- [ ] matrix-ansatz weniger priorisieren
+- [ ] ersten Ansatz optimieren: 
+    **- [ ] Optimierung für `is_neighbouring_edge`: edges in set packen und alte edges rausschmeißen**
+
+### Konferenz
+- [ ] CADE größte Konferenz auf Fachgebiet (100-150 Teilnehmer)
+- [ ] jährlich, seit ca. 1980er
+- [ ] dieses Jahr in Stuttgart
+
+- [ ] Deduktionstreffen ist Workshop in dieser Konferenz
+- [ ] Vorträge
+- [ ] langes Paper wird in einem Workshop proceedings veröffentlicht
+    - [ ] https://ceur-ws.org/CEURWS-TEAM.html
+
+- [ ] Uni bletzo trevol award
+**- [ ] Könnte als Helfer mithelfen**
+**- [ ] Fragen ob ich dafür iwi Extra-Urlaub bekomme**
+
+### Meeting 15.05.
+
+- Feedback: soll das "Gemäß Ziffer" Zeug bei der Declaration of Authorship weg?
+
