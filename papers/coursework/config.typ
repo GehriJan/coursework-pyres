@@ -17,7 +17,7 @@
 
 
 // ctheorems
-#let theorem = thmbox("theorem", "Theorem", fill: rgb("#f0f0f0"))
+#let theorem = thmbox("theorem", "Theorem", fill: rgb("#f3f3f3"))
 #let corollary = thmplain(
   "corollary",
   "Corollary",
@@ -30,5 +30,5 @@
   inset: (x: 1.2em, top: 1em, bottom: 1em),
   fill: rgb("#f8f8f8"),
 )
-#let example = thmplain("example", "Example").with(numbering: none)
+#let example = thmbox("example", "Example", fill: rgb("#f0f0f0")).with(numbering: none)
 #let proof = thmproof("proof", "Proof")

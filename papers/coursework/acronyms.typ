@@ -4,4 +4,5 @@
   REST: "Representational State Transfer",
   TPTP: "Thousands of Problems for Theorem Provers",
   APT: "alternating path theory",
+  CNF: "Conjunctive Normal Form",
 )

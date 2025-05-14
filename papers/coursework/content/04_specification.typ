@@ -4,7 +4,7 @@
 This chapter serves to specify the context and requirements for the implementation. First, we will establish a formal description of the algorithm, then we will frame the technical details the algorithm will be embedded into.
 
 == Formal specification
-The algorithm can be stated as a function
+The algorithm is should calculate the function
 
 $ R_(n,S)(S'): (S, S', n) |-> {c in S | d_S (S',c) <= n} $
 
@@ -16,17 +16,20 @@ with $S$ being a set of all given clauses, $S' subset.eq S$ being the set of cla
 
 The implementation of #acr("APT") functions as a filter preceding the actual solving algorithm. Therefore, the only changes made to existing PyRes steps are the command line specification and the output of the result.
 
-Whilst the parameters $S$ and $S'$ are defined by the problem file, the relevance distance $n$ can be specified with the command line argument `--relevance-distance/-r`.
+Whilst the set of all clauses $S$ and the set of conjectures $S'$ are defined by the problem file,
+the relevance distance $n$ can be specified with the command line argument~#box[`--relevance-distance/-r`].
 If a relevance distance is specified, clause selection with #acr("APT") is performed before saturation. @pyres-apt-pipeline illustrates the new pipeline:
 
 #figure(
-    image("../assets/pyres_apt_pipeline.drawio.png"),
+    image("../assets/pyres_apt_pipeline.drawio.png", width: 225pt),
     caption: [PyRes pipeline with optional clause-selection step.\
     Orange denotes changed, red new steps.]
 ) <pyres-apt-pipeline>
 
-Independently of implementation, the process of selecting relevant clauses features two steps: Firstly, the graph has to be constructed; secondly, the relevance neighbourhood of the negated conjectures has to be selected.
-Each step is performed by a seperate python function.
+Independent of implementation, the process of selecting relevant clauses features two steps:
+Firstly, the graph has to be constructed;
+secondly, the relevance neighbourhood of the negated conjectures has to be selected.
+Each step is performed by a seperate Python function.
 
 To provide a unified interface for different implementations of #acr("APT"), both steps are aggregated in an abstract base class named `RelevanceGraph`. Each concrete implementation is created as a child class of `RelevanceGraph`, supplying a function body for both `construct_graph` and `get_rel_neighbourhood`.
 

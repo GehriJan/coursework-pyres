@@ -13,11 +13,11 @@ and the #text("Res", weight: "bold")olution calculus, which it implements for so
 Python is an interpreted high-level programming language. It supports multiple programming paradigms like functional programming and object orientation.
 Python was created by Guido van Rossum in the early 1990s @python_history.
 Not only is Python easy to learn and read, it also has a lot of packages like Numpy for efficient numerical computations, Pandas for manipulating big datasets, Matplotlib for plotting or TensorFlow and PyTorch for machine learning.
-This is why it is still among the most used programming languages.
+This is why it is among the most used programming languages.
 
 == PyRes and other theorem provers
 A lot of modern theorem provers, i.e. E @e_1, Vampire @vampire_1 and SPASS @spass_1, are built with low-level languages like C and C++ (@e_gh @vampire_gh @spass_gh). They employ optimized data structures and complex algorithms to increase their performance.
-Other provers like iprover @iprover_gh are implemented in lesser-known languages like OCamL.
+Other provers like iprover @iprover_gh are implemented in lesser-known languages like OCaml.
 While those languages ensure soundness and efficiency, both approaches make it hard for new developers to understand the codebase and functionality, hence hindering further developement. This also leaves the didactic potential of theorem provers unused.
 
 PyRes, on the other hand, is explicitly built for readability.
@@ -39,14 +39,17 @@ Finally, the classes `SearchParams` and `ProofState` utilize the previously ment
 
 Apart from those, there are multiple modularized components: `signature` provides an explicit signature of the formulae, `unification`, `subsumption`, `substitution`, `derivations` and `resolution` implement the corresponding #acrs("FOL") algorithms. `heuristics` and `indexing` provide different algorithms for optimized clause-selection during resolution.
 
-To ensure an easy learning curve, PyRes comes in three consecutive forms:
+To ensure an easy learning curve, PyRes comes in three increasingly more complex versions:
 1. *`pyres-simple`*, a minimal version for clausal logic.
 2. *`pyres-cnf`*, adding heuristics, indexing and sub-sumption.
 3. *`pyres-fof`*, full support for #acrs("FOL") with equality.
 
 == Functionality
 
-PyRes functions as a pipeline. First, the problem is parsed and converted to the data types specified in the previous chapter. If needed (and supported by the specified version), equality axioms are added. Then, the actual reasoning takes place.
+PyRes functions as a pipeline.
+First, the problem is parsed and converted to the data types specified in the previous chapter.
+If needed (and supported by the specified version), equality axioms are added.
+Then, the problem is being clausified to #acr("CNF"), before the actual reasoning takes place.
 
 At the heart of PyRes is the given-clause algorithm @teaching_by_example. Here, the clauses are divided into two sets, one for unprocessed and another for processed clauses. In the beginning, all clauses are unprocessed. The algorithm now iteratively selects one of the unprocessed clauses, the _given-clause_, and computes its factors as well as the resolvents between the given-clause and all processed clauses. These new clauses are now added to the set of unprocessed clauses, whilst the given-clause is moved from the unprocessed clauses to the processed clauses. The algorithm ends either if the given-clause is the empty clause (and therefore a contradiction has been found) or the set of unprocessed clauses is empty. @given-clause-simple shows the implementation of the given-clause-algorithm in `pyres-simple`.
 
@@ -54,7 +57,7 @@ If the algorithm found a contradiction, the proof is then extracted. At last, th
 @pyres-pipeline illustrates this pipeline as a flow-chart.
 
 #figure(
-    image("../assets/pyres_pipeline.drawio.png"),
+    image("../assets/pyres_pipeline.drawio.png", width: 250pt),
     caption: [Simple pipeline of PyRes's functionality.]
 ) <pyres-pipeline>
 

@@ -28,7 +28,7 @@
   date-format: "[month]/[day]/[year]",
   time-frame: "09/30/2024 - 06/12/2025",
   date: datetime.today(),
-  glossary: glossary, // displays the glossary terms defined in the glossary dictionary
+  // glossary: glossary, // displays the glossary terms defined in the glossary dictionary
   language: "en", // en, de
   supervisor: (university: "Prof. Dr. Stephan Schulz"),
   university: "Cooperative State University Baden-Württemberg",
