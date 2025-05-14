@@ -54,18 +54,18 @@ starexec_jobs:
     wall_clock_timeout: 10
     cpu_clock_timeout: 5
     rel_distances:
-  5181:
-    id: 5181
-    apt_version: 1.1.2
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5182:
-    id: 5182
-    apt_version: 2.0.0
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
+  # 5181:
+  #   id: 5181
+  #   apt_version: 1.1.2
+  #   wall_clock_timeout: 10
+  #   cpu_clock_timeout: 5
+  #   rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
+  # 5182:
+  #   id: 5182
+  #   apt_version: 2.0.0
+  #   wall_clock_timeout: 10
+  #   cpu_clock_timeout: 5
+  #   rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
 
 
 versions:
