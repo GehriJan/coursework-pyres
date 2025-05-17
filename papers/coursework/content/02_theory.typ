@@ -5,7 +5,7 @@
 == Propositional logic
 
 === Syntax of propositional logic
-Propositional logic deals with atomic boolean variables (usually denoted with letters $A, B, C, ...$).
+Propositional logic deals with atomic boolean variables (usually denoted with letters $A, B, C, ...$ or $p, q, r, ...$).
 
 They can be negated ($not$) or combined with different junctors ($and$ denoting _and_, $or$ denoting _or_) to form complex formulae.\
 The notion that $A$ _implies_ $B$ is defined as $not A or B$ and noted as $A->B$.\
@@ -19,7 +19,7 @@ The ranking of operators is $ not >> and >> or >> -> >> <->$; where necessary, b
 
 === Semantic of propositional logic
 Boolean variables can take the values $0$, which is interpreted as _false_, and $1$, being interpreted as _true_.
-The _semantics_ of logical operators can be stated with a simple truth table @fol_introduction:
+The semantics of logical operators can be stated with a simple truth table @fol_introduction:
 
 #figure(
   table(
@@ -41,21 +41,86 @@ Likewise, a formula is called _falsifiable_, if there exists an interpretation t
 
 #example[Propositional logic semantic.
 
-  Suppose
-  - a set of variables ${A, B, C, D}$ and
-  - an interpretation $cal(I) = {A |-> 1, B |-> 0, C |-> 0, D |-> 1}$.
+  Suppose - a set of variables ${A, B, C, D}$ and - an interpretation $cal(I) = {A |-> 1, B |-> 0, C |-> 0, D |-> 1}$.
 
-  Then the formulae $alpha = D or 1$, $beta = not A -> B$, $gamma = not C and not D <-> not (C or D)$ evaluate to be true under $cal(I)$, whilst $delta = 0$, $epsilon = C -> B$ and $zeta = B or C and (A<->D)$ are evaluated to be false under $cal(I)$.
+  Then the formulae\
+  #h(1em)$alpha = D or 1$, $beta = not A -> B$ and $gamma = not C and not D <-> not (C or D)$\
+  evaluate to be true under $cal(I)$ whilst\
+  #h(1em)$delta = 0$, $epsilon = C -> B$ and $zeta = B or C and (A<->D)$\
+  evaluate to be false under $cal(I)$.
 
   Note that the formulae $alpha$, $beta$, $gamma$, $epsilon$ and $zeta$ are satisfiable, $alpha$ and $gamma$ even being tautologies.
   The formulae $beta$, $delta$, $epsilon$ and $zeta$ are falsifiable, $delta$ is unsatisfiable.
 ]
 
 === Resolution in propositional logic
-Suppose $alpha = (A or not B) and ... and (not C or A)$ is a conjunction of disjunctions, also called #acrf("CNF"). A natural question to ask now is whether $alpha$ is satisfiable, that is whether there exists an interpretation $cal(I)$ of $alpha$ so that $alpha^cal(I)$ evaluates to be true.
+One natural question to ask when dealing with formulae is whether one or more formulae _imply_ another formula. One method of solving this problem is with _binary resolution_, formulated by J. A. Robinson in 1965 @resolution_primary.
 
-One method of solving this problem is by using the _resolution algorithm_.
-It was first formulated by J. A. Robinson in 1965 @resolution_primary.
+
+If a formula is a conjunction of disjunctions and negations appear only directly before variables it is in #acrf("CNF").
+A formula $alpha = (A or not B) and ... and (not C or A)$ in #acrs("CNF") can also be written as a set of _clauses_ $M_alpha = {{A,not B}, ..., {not C, A}}$, where the elements of clauses are called _literals_. The empty clause is denoted by $square$.
+
+Now suppose the formula @mathe_grundlagen_it_mengen_logik
+
+$ alpha = (p or q or not r) and (r or not s) \
+M_alpha = {{p, q, not r}, {r, not s}}. $
+
+Is $alpha$ satisfiable?
+For $alpha$ to be satisfiable, there has to exist a model of $alpha$, and for an interpretation of $alpha$ to be a model, it has to make both clauses in $M_alpha$ true.
+The first clause gets true either if $p^cal(I)=1$ or $q^cal(I)=0$, the second is true if $s^cal(I)=0$.
+$r$ has no effect on the truth-value of the formula, because it appears once positive and once negative; the value of one literal always "canceles out" the value of the other one. Out of these observations, we construct a new clause ${p, q, not s}$ and add it to our set of clauses. Satisfiability of our previous set $M_alpha$ is now equivalent to satisfiability of our newly constructed set $M_alpha '$:
+
+$ M_alpha eq.triple "Res"(M_alpha) = M_alpha ' = {{p, q, not r}, {r, not s}, {p, q, not s}}. $
+
+If resolution can be applied again, one abbreviates $"Res"("Res"(M_alpha))$ with $"Res"^2 (M_alpha)$, $"Res"("Res"("Res"(M_alpha)))$ with $"Res"^3 (M_alpha)$ and so on.
+$"Res"^* (M_alpha)$ denotes the "final" set of clauses for which no more resolution can be applied.
+If it contains the empty clause, there are no models of $"Res"^* (M_alpha)$, and because $"Res"^* (M_alpha) eq.triple M_alpha$ there are also no models of $M_alpha$, which in turn means, that $M_alpha$ is shown to be unsatisfiable.
+
+In general, the central inferencing rule of resolution @mathe_grundlagen_it_mengen_logik can be stated as follows:
+
+$
+  prooftree(
+    rule(
+      p_1 or ... or p_m or q_1 or ... or q_m,
+      p_1 or ... or p_m or r,
+      q_1 or ... or q_m or not r,
+    )
+  )","\
+  "or in clause notation:"\
+  prooftree(
+    rule(
+      {p_1, ..., p_m, q_1, ..., q_m},
+      {p_1, ..., p_m, r},
+      {q_1, ..., q_m, not r},
+    )
+  )"."
+$
+
+So how can this be obtained to proof that a set of formulae implies another formula?
+Suppose one wants to proof that $alpha$, $beta$ and $gamma$ imply $delta$ with:
+
+
+- $alpha = not q or r$
+- $beta = p or not r$
+- $gamma = not q or not p$
+- $delta = q$
+
+
+
+$ (not q or r) and (p or not r) and (not q or not p) tack.r.double q $
+
+
+
+A formula $alpha$ implies another formula $beta$, if all models of $alpha$ are also models of $beta$. In this case, one writes $alpha tack.r.double beta$.
+
+
+
+
+
+
+
+
+
 
 
 

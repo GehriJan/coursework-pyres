@@ -2,6 +2,7 @@
 #import "typst-dhbw-template/lib.typ": *
 #import "@preview/cetz:0.3.4": canvas, draw
 #import draw: line, content, rect, on-layer
+#import "@preview/curryst:0.5.1": rule, prooftree
 
 
 
