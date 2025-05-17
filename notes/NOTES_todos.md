@@ -1,5 +1,7 @@
 # Todos
 
+- [ ] citing von tptp auf das in tptp.org/TPTP/ angegebene aktualisieren
+
 ## Developing
 
 - [ ] feat: implement mermaid output

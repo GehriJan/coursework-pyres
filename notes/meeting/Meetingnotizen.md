@@ -320,4 +320,26 @@ Sonstiges:
 ### Meeting 15.05.
 
 - Feedback: soll das "Gemäß Ziffer" Zeug bei der Declaration of Authorship weg?
+    - [ ] das markierte kann raus
+- Diese Woche Kapitel -> Samstag 
+- Literaturverwaltung
+- Starexec down -> wie weiter machen?
+    - paths wo er drin such stehen am Anfang der Datei
+        - er sucht alles im eRunDir
+    - e/python/pylib_e_multi
+    - new_jobs -> namen von runskripten
+        - datei, in der name der probleme stehen + " " + run script
+    - new_config -> config vom server
+        - wieviele cores maximal (max_running: 48)
+    - laufen lassen mit ./pylib_e_multi.py
+    - erstellt JobjXXXX_output.zip, das von Struktur her wie Starexec ist
+    - tail -f logfile -> log anschauen
+    - kann nur mit TPTP_FLAT umgehen
 
+- wirkt sich anzahl der maximal gleichzeitig laufenden jobs auf laufzeit aus?
+    - es sollten nicht mehr als CPU Kerne sein
+
+- was ist der vorteil von diesem nohup ansatz? das er halt ständig schaut?
+    - es geht weiter, wenn ich die Shell zu mache 
+
+- was gibt es gerade beim saturn zu beachten?
