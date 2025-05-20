@@ -60,15 +60,17 @@ One natural question to ask when dealing with formulae is whether one or more fo
 If a formula is a conjunction of disjunctions and negations appear only directly before variables it is in #acrf("CNF").
 A formula $alpha = (A or not B) and ... and (not C or A)$ in #acrs("CNF") can also be written as a set of _clauses_ $M_alpha = {{A,not B}, ..., {not C, A}}$, where the elements of clauses are called _literals_. The empty clause is denoted by $square$.
 
-Now suppose the formula @mathe_grundlagen_it_mengen_logik
+Now suppose the formula @mathe_grundlagen_it_mengen_logik:
 
 $ alpha = (p or q or not r) and (r or not s) \
 M_alpha = {{p, q, not r}, {r, not s}}. $
 
 Is $alpha$ satisfiable?
 For $alpha$ to be satisfiable, there has to exist a model of $alpha$, and for an interpretation of $alpha$ to be a model, it has to make both clauses in $M_alpha$ true.
-The first clause gets true either if $p^cal(I)=1$ or $q^cal(I)=0$, the second is true if $s^cal(I)=0$.
-$r$ has no effect on the truth-value of the formula, because it appears once positive and once negative; the value of one literal always "canceles out" the value of the other one. Out of these observations, we construct a new clause ${p, q, not s}$ and add it to our set of clauses. Satisfiability of our previous set $M_alpha$ is now equivalent to satisfiability of our newly constructed set $M_alpha '$:
+The first clause gets true if $p^cal(I)=1$ or $q^cal(I)=1$, the second is true if $s^cal(I)=0$.
+$r$ has no effect on the truth-value of the formula, because it appears once positive and once negative; the value of one literal always "canceles out" the value of the other one.
+Out of these observations, we construct a new clause ${p, q, not s}$ and add it to our set of clauses.
+Satisfiability of our previous set $M_alpha$ is now equivalent to satisfiability of our newly constructed set $M_alpha ' = "Res"(M_alpha)$:
 
 $ M_alpha eq.triple "Res"(M_alpha) = M_alpha ' = {{p, q, not r}, {r, not s}, {p, q, not s}}. $
 
@@ -76,7 +78,7 @@ If resolution can be applied again, one abbreviates $"Res"("Res"(M_alpha))$ with
 $"Res"^* (M_alpha)$ denotes the "final" set of clauses for which no more resolution can be applied.
 If it contains the empty clause, there are no models of $"Res"^* (M_alpha)$, and because $"Res"^* (M_alpha) eq.triple M_alpha$ there are also no models of $M_alpha$, which in turn means, that $M_alpha$ is shown to be unsatisfiable.
 
-In general, the central inferencing rule of resolution @mathe_grundlagen_it_mengen_logik can be stated as follows:
+Generalising this concept, the central inferencing rule of resolution @mathe_grundlagen_it_mengen_logik can be stated as follows:
 
 $
   prooftree(
@@ -99,12 +101,10 @@ $
 So how can this be obtained to proof that a set of formulae implies another formula?
 Suppose one wants to proof that $alpha$, $beta$ and $gamma$ imply $delta$ with:
 
-
 - $alpha = not q or r$
 - $beta = p or not r$
 - $gamma = not q or not p$
 - $delta = q$
-
 
 
 $ (not q or r) and (p or not r) and (not q or not p) tack.r.double q $
