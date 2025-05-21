@@ -317,7 +317,7 @@ Sonstiges:
 **- [ ] Könnte als Helfer mithelfen**
 **- [ ] Fragen ob ich dafür iwi Extra-Urlaub bekomme**
 
-### Meeting 15.05.
+## Meeting 15.05.
 
 - Feedback: soll das "Gemäß Ziffer" Zeug bei der Declaration of Authorship weg?
     - [ ] das markierte kann raus
@@ -343,3 +343,15 @@ Sonstiges:
     - es geht weiter, wenn ich die Shell zu mache 
 
 - was gibt es gerade beim saturn zu beachten?
+
+
+## Meeting 21.05.2025
+- Saturn
+    - Vscode läuft soweit
+    - Problem: user-home-directory ist nicht richtig konfiguriert -> wie lösen?
+    - Was ist mit den anderen DHBW-Rechnern?
+
+
+
+
+
