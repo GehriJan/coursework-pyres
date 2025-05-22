@@ -3,6 +3,6 @@
 
 src/TPTP-v9.0.0
 src/TPTP-v9.0.0.tar
-src/analysis_data
-src/profiling/*
+src/data/starexec_outputs
+src/data/profiling_csv
 papers/other-courseworks

@@ -1,92 +1,154 @@
-
 starexec_jobs:
   5054:
+    apt_version: 1.0.0
+    cpu_clock_timeout: 5
     id: 5054
-    apt_version: 1.0.0
+    rel_distances:
+    - 2.0
+    - 3.0
+    - 5.0
+    - 8.0
+    - 13.0
+    - 21.0
+    - 33.0
+    - 54.0
+    - nan
     wall_clock_timeout: 5
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
   5055:
-    id: 5055
     apt_version: 1.0.0
-    wall_clock_timeout: 3
     cpu_clock_timeout: 3
-    rel_distances: [2.0, 3.0, 8.0, 21.0, 54.0, nan]
+    id: 5055
+    rel_distances:
+    - 2.0
+    - 3.0
+    - 8.0
+    - 21.0
+    - 54.0
+    - nan
+    wall_clock_timeout: 3
   5111:
+    apt_version: 1.1.0
+    cpu_clock_timeout: 5
     id: 5111
-    apt_version: 1.1.0
+    rel_distances:
+    - 2.0
+    - 3.0
+    - 5.0
+    - 8.0
+    - 13.0
+    - 21.0
+    - 33.0
+    - 54.0
+    - nan
     wall_clock_timeout: 5
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
   5112:
+    apt_version: 0.0.0
+    cpu_clock_timeout: '?'
     id: 5112
-    apt_version: 0.0.0
-    wall_clock_timeout: "?" # it was 5, supposedly
-    cpu_clock_timeout: "?" # it was 5, supposedly
-    rel_distances:
+    rel_distances: null
+    wall_clock_timeout: '?'
   5135:
+    apt_version: 0.0.0
+    cpu_clock_timeout: 5
     id: 5135
-    apt_version: 0.0.0
+    rel_distances: null
     wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances:
   5136:
-    id: 5136
     apt_version: 1.0.0
-    wall_clock_timeout: 10
     cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5137:
-    id: 5137
-    apt_version: 1.1.0
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5139:
-    id: 5139
-    apt_version: 1.1.1
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
-    rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  5151:
-    id: 5151
-    apt_version: 0.0.0
-    wall_clock_timeout: 10
-    cpu_clock_timeout: 5
+    id: 5136
     rel_distances:
-  # 5181:
-  #   id: 5181
-  #   apt_version: 1.1.2
-  #   wall_clock_timeout: 10
-  #   cpu_clock_timeout: 5
-  #   rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-  # 5182:
-  #   id: 5182
-  #   apt_version: 2.0.0
-  #   wall_clock_timeout: 10
-  #   cpu_clock_timeout: 5
-  #   rel_distances: [2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 33.0, 54.0, nan]
-
-
+    - 2.0
+    - 3.0
+    - 5.0
+    - 8.0
+    - 13.0
+    - 21.0
+    - 33.0
+    - 54.0
+    - nan
+    wall_clock_timeout: 10
+  5137:
+    apt_version: 1.1.0
+    cpu_clock_timeout: 5
+    id: 5137
+    rel_distances:
+    - 2.0
+    - 3.0
+    - 5.0
+    - 8.0
+    - 13.0
+    - 21.0
+    - 33.0
+    - 54.0
+    - nan
+    wall_clock_timeout: 10
+  5139:
+    apt_version: 1.1.1
+    cpu_clock_timeout: 5
+    id: 5139
+    rel_distances:
+    - 2.0
+    - 3.0
+    - 5.0
+    - 8.0
+    - 13.0
+    - 21.0
+    - 33.0
+    - 54.0
+    - nan
+    wall_clock_timeout: 10
+  5151:
+    apt_version: 0.0.0
+    cpu_clock_timeout: 5
+    id: 5151
+    rel_distances: null
+    wall_clock_timeout: 10
 versions:
   0.0.0:
+    commits: null
     description: No alternating path implementation
-    commits:
   1.0.0:
+    commits:
+    - f58e199
+    - bdd8c0b
     description: First working version of edge-set-based clause selection
-    commits: [f58e199, bdd8c0b]
   1.1.0:
+    commits:
+    - 2f8e185
     description: No list data structures, only set
-    commits: [2f8e185]
   1.1.1:
+    commits:
+    - 5866387
     description: Fixing the adding of new neighbours to neighbourhood
-    commits: [5866387]
   1.1.2:
+    commits:
+    - 6a4a1b3
     description: Minor changes for functions
-    commits: [6a4a1b3]
+    starexec_configs:
+      PyRes_rd_002: 400676
+      PyRes_rd_003: 400679
+      PyRes_rd_005: 400677
+      PyRes_rd_008: 400673
+      PyRes_rd_013: 400675
+      PyRes_rd_021: 400680
+      PyRes_rd_033: 400678
+      PyRes_rd_054: 400674
   2.0.0:
-    description:
-    commits: [5c71954]
+    commits:
+    - 5c71954
+    description: null
+    solver_id: '3773'
+    starexec_configs:
+      PyRes_rd_002: 400684
+      PyRes_rd_003: 400687
+      PyRes_rd_005: 400685
+      PyRes_rd_008: 400681
+      PyRes_rd_013: 400683
+      PyRes_rd_021: 400688
+      PyRes_rd_033: 400686
+      PyRes_rd_054: 400682
+    starexec_solver_id: '3773'
   X.X.X:
-    description:
     commits: []
+    description: null
