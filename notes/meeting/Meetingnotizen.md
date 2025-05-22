@@ -352,6 +352,9 @@ Sonstiges:
     - Was ist mit den anderen DHBW-Rechnern?
 
 
+## Meeting 06.05.2025 
+- Was mach ich mit dem ganzen Code, den ich für die Testumgebung geschrieben habe?
+
 
 
 
