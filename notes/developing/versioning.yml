@@ -134,6 +134,7 @@ versions:
       PyRes_rd_021: 400680
       PyRes_rd_033: 400678
       PyRes_rd_054: 400674
+    starexec_solver_id: '3772'
   2.0.0:
     commits:
     - 5c71954
