@@ -74,10 +74,8 @@ Satisfiability of our previous set $M_alpha$ is now equivalent to satisfiability
 
 $ M_alpha eq.triple "Res"(M_alpha) = M_alpha ' = {{p, q, not r}, {r, not s}, {p, q, not s}}. $
 
-If resolution can be applied again, one abbreviates $"Res"("Res"(M_alpha))$ with $"Res"^2 (M_alpha)$, $"Res"("Res"("Res"(M_alpha)))$ with $"Res"^3 (M_alpha)$ and so on.
-$"Res"^* (M_alpha)$ denotes the "final" set of clauses for which no more resolution can be applied.
-If it contains the empty clause, there are no models of $"Res"^* (M_alpha)$, and because $"Res"^* (M_alpha) eq.triple M_alpha$ there are also no models of $M_alpha$, which in turn means, that $M_alpha$ is shown to be unsatisfiable.
 
+#definition("Binary resolution inferencing rule")[
 Generalising this concept, the central inferencing rule of resolution @mathe_grundlagen_it_mengen_logik can be stated as follows:
 
 $
@@ -97,42 +95,62 @@ $
     )
   )"."
 $
+]<def-bin-inf>
+
+If resolution can be applied again, one abbreviates $"Res"("Res"(M_alpha))$ with $"Res"^2 (M_alpha)$, $"Res"("Res"("Res"(M_alpha)))$ with $"Res"^3 (M_alpha)$ and so on, with $M_alpha subset.eq "Res"^i (M_alpha) subset.eq "Res"^(i+1) (M_alpha)$ for all $i>=1$.
+This notation allows us to formulate the resolution theorem @resolution_primary:
+
+#theorem("Resolution Theorem")[
+  If $M$ is a finite set of clauses, then $M$ is unsatisfiable _if and only if_
+  $"Res"^n (M)$ contains $square$, for some $n>=0$.
+]
+
+To check a given set of clauses $M$ for satisfiability,
+one can iteratively apply the resolution inferencing rule.
+At some point, either the empty clause is derived and $M$ is shown to be unsatisfiable, or no more resolution can be applied and $M$ is shown to be satisfiable.
 
 So how can this be obtained to proof that a set of formulae implies another formula?
-Suppose one wants to proof that $alpha$, $beta$ and $gamma$ imply $delta$ with:
+A set of premises ${alpha, beta, gamma}$ implies a conclusion $delta$ if all models of $alpha and beta and gamma$ are also models of $delta$.
+An equivalent formulation of this is that there is no interpretation that makes $alpha and beta and gamma$ true, but not $delta$,
+which can be reduced to $alpha and beta and gamma and not delta$ being unsatisfiable.
+This reduction of implication to satisfiability is demonstrated with the following example:
 
+#example("Resolution in propositional logic")[\
+Suppose the following formulae:
 - $alpha = not q or r$
 - $beta = p or not r$
 - $gamma = not q or not p$
-- $delta = q$
+- $delta = not q$
+Do $alpha$, $beta$ and $gamma$ imply $delta$?
 
+To check this, we test the conjunction of the premises and the negation of the conjecture regarding their satisfiability:
 
-$ (not q or r) and (p or not r) and (not q or not p) tack.r.double q $
+  $ {alpha, beta, gamma} tack.r.double delta #h(2em) <-> #h(2em)  alpha and beta and gamma and not delta italic("unsatisfiable") $
 
+First, this formula is converted to clause notation:
+  $ M = {{not q, r}, {p, not r}, {not q, not p}, {q}} $
 
+Now, resolution can be applied. Wo notate it as a table, indexing the clauses and noting the rule and parent clauses of each clause:
 
-A formula $alpha$ implies another formula $beta$, if all models of $alpha$ are also models of $beta$. In this case, one writes $alpha tack.r.double beta$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#align(
+  center,
+  table(
+    columns: (2em, auto, auto, auto),
+    [*i*], [*Clause*], [*Rule*], [*Parent clauses*],
+    [1], [${not q, r}$], [Initial clause], [ -- ],
+    [2], [${p, not r}$],  [Initial clause],[ -- ],
+    [3], [${not q, not p}$],  [Initial clause],[ -- ],
+    [4], [${q}$],  [Initial clause],[ -- ],
+    [5], [${not q, p}$],  [Binary Resolution],[ 1,2 ],
+    [6], [${not q}$],  [Binary Resolution],[ 3,5 ],
+    [7], [$square$],  [Binary Resolution],[ 4,6 ],
+  )
+)
+Therefore, $M$ is unsatisfiable and ${alpha, beta, gamma} tack.r.double delta$.
+#place(bottom + right, $qed$)
+]
 
 == #acrl("FOL")
-
 
 _First-order-logic_ is an extension of propositional logic.
 
