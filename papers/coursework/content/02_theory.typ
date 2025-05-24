@@ -152,12 +152,37 @@ Therefore, $M$ is unsatisfiable and ${alpha, beta, gamma} tack.r.double delta$.
 
 == #acrl("FOL")
 
-_First-order-logic_ is an extension of propositional logic.
+Propositional logic allows the combination of boolean variables into formulas,
+but is really limited in its expressiveness.
+For example, one cannot formulate the syllogism _"All humans are mortal. Socrates is a human. Therefore, Socrates is mortal."_ in such a way in propositional logic as to test the argument on its soundness.
+
+A formalism that enables these kinds of formulations is #acrf("FOL"), an extension of propositional logic. This chapter will introduce #acrs("FOL") syntax, semantic and extend resolution in propositional logic to work with #acrs("FOL").
+
+=== Notation and Syntax of #acrl("FOL")
+
+#definition("Terms in " + acrl("FOL"))[\
+  A term is either
+  - A variable ($x, y, z, x_1, y_2, ...$ or in #acrs("TPTP") syntax $X 1, X 2, ...$) or constant ($a, b, c, ...$) for an individual
+  - or of the form $f(t_1, ..., t_n)$, with $f$ being a function symbol of a function with the arity $n$ (denoted by $f|_n$) and $t_1, ..., t_n$ being terms themselves. Functions are usually denoted with letters $f, g, h, ...$
+]
+
+#definition("Formulae in " + acrl("FOL"))[\
+  A formula is either
+  - an atomic formula of the form $P(t_1, ..., t_n)$, with $P$ being a predicate symbol of a function with the arity $n$ (denoted by $P|_n$) and $t_1, ..., t_n$ being terms. Predicates are usually denotes with letters $P, Q, R, ...$
+  - or it is of the form $not alpha$, $alpha and beta$, $alpha or beta$, $exists x alpha$, $forall x alpha$, with $alpha$ and $beta$ being formulae
+]
+
+#example(acrl("FOL") + " syntax")[\
+  The variable $"X3"$, constant $b$, and $f("X3", g(a, e))$ are terms.
+
+  The strings~$P(x)$ and~$Q(a,f(x,y))$ are atomic formulae;\
+  the string $forall x (P(x) and exists y R(x,y))$ is also a formula.
+]
 
 
-_Terms_ are the most fundamental building block of #acrs("FOL") formulas.
-They correspond to elements of the corresponding domain $D$ and consist of variables,
-functions and constants.\
+// _Terms_ are the most fundamental building block of #acrs("FOL") formulas.
+// They correspond to elements of the corresponding domain $D$ and consist of variables,
+// functions and constants.\
 We assume a set $V subset D$ of _variables_.
 Variables are usually denoted with the letters $x, y, z, x_1, y_2, ...$,
 or in #acrs("TPTP") syntax: $X 1, X 2, ...$.\
