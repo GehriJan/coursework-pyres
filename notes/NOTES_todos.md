@@ -15,9 +15,14 @@
 - [ ] incorporate false input values? 
 - [ ] 
 
+### Analysis
+- [ ] Make new analysis of old jobs but only taking relevant problems
+- [ ] Analyse Job 5197
+- [ ] Analyse Job 5199
+
 ### Deployment
-- [ ] Deploy 2.0.0
 - [ ] Deploy 1.2.0
+- [ ] Deploy 2.0.0 without so much printing?
 - [ ] 
 
 ### Setup

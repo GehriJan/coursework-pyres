@@ -1,9 +1,5 @@
-starexec_jobs:
-  5054:
-    apt_version: 1.0.0
-    cpu_clock_timeout: 5
-    id: 5054
-    rel_distances:
+rel_distance_configs:
+  fibo_4_to_11: &fibo_4_to_11
     - 2.0
     - 3.0
     - 5.0
@@ -12,7 +8,13 @@ starexec_jobs:
     - 21.0
     - 33.0
     - 54.0
-    - nan
+
+starexec_jobs:
+  5054:
+    apt_version: 1.0.0
+    cpu_clock_timeout: 5
+    id: 5054
+    rel_distances: *fibo_4_to_11
     wall_clock_timeout: 5
   5055:
     apt_version: 1.0.0
@@ -24,22 +26,12 @@ starexec_jobs:
     - 8.0
     - 21.0
     - 54.0
-    - nan
     wall_clock_timeout: 3
   5111:
     apt_version: 1.1.0
     cpu_clock_timeout: 5
     id: 5111
-    rel_distances:
-    - 2.0
-    - 3.0
-    - 5.0
-    - 8.0
-    - 13.0
-    - 21.0
-    - 33.0
-    - 54.0
-    - nan
+    rel_distances: *fibo_4_to_11
     wall_clock_timeout: 5
   5112:
     apt_version: 0.0.0
@@ -57,46 +49,19 @@ starexec_jobs:
     apt_version: 1.0.0
     cpu_clock_timeout: 5
     id: 5136
-    rel_distances:
-    - 2.0
-    - 3.0
-    - 5.0
-    - 8.0
-    - 13.0
-    - 21.0
-    - 33.0
-    - 54.0
-    - nan
+    rel_distances: *fibo_4_to_11
     wall_clock_timeout: 10
   5137:
     apt_version: 1.1.0
     cpu_clock_timeout: 5
     id: 5137
-    rel_distances:
-    - 2.0
-    - 3.0
-    - 5.0
-    - 8.0
-    - 13.0
-    - 21.0
-    - 33.0
-    - 54.0
-    - nan
+    rel_distances: *fibo_4_to_11
     wall_clock_timeout: 10
   5139:
     apt_version: 1.1.1
     cpu_clock_timeout: 5
     id: 5139
-    rel_distances:
-    - 2.0
-    - 3.0
-    - 5.0
-    - 8.0
-    - 13.0
-    - 21.0
-    - 33.0
-    - 54.0
-    - nan
+    rel_distances: *fibo_4_to_11
     wall_clock_timeout: 10
   5151:
     apt_version: 0.0.0
@@ -104,6 +69,13 @@ starexec_jobs:
     id: 5151
     rel_distances: null
     wall_clock_timeout: 10
+  5197:
+    apt_version: 2.0.0
+    cpu_clock_timeout: 5
+    id: 5197
+    rel_distances: *fibo_4_to_11
+    wall_clock_timeout: 10
+
 versions:
   0.0.0:
     commits: null
