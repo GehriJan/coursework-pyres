@@ -22,12 +22,8 @@
 
 ### Deployment
 - [ ] Deploy 1.2.0
-- [ ] Deploy 2.0.0 without so much printing?
-- [ ] 
-
-### Setup
-- [ ] Make new analysis of old jobs but only taking relevant problems
-
+- [ ] Deploy 0.0.0 again
+- 
 
 ## Writing
 - [ ] Unterschiedliche Klauselselektionen beschreiben

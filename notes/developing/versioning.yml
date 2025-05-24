@@ -1,20 +1,19 @@
 rel_distance_configs:
-  fibo_4_to_11: &fibo_4_to_11
-    - 2.0
-    - 3.0
-    - 5.0
-    - 8.0
-    - 13.0
-    - 21.0
-    - 33.0
-    - 54.0
-
+  fibo_4_to_11: &id001
+  - 2.0
+  - 3.0
+  - 5.0
+  - 8.0
+  - 13.0
+  - 21.0
+  - 33.0
+  - 54.0
 starexec_jobs:
   5054:
     apt_version: 1.0.0
     cpu_clock_timeout: 5
     id: 5054
-    rel_distances: *fibo_4_to_11
+    rel_distances: *id001
     wall_clock_timeout: 5
   5055:
     apt_version: 1.0.0
@@ -31,7 +30,7 @@ starexec_jobs:
     apt_version: 1.1.0
     cpu_clock_timeout: 5
     id: 5111
-    rel_distances: *fibo_4_to_11
+    rel_distances: *id001
     wall_clock_timeout: 5
   5112:
     apt_version: 0.0.0
@@ -49,19 +48,19 @@ starexec_jobs:
     apt_version: 1.0.0
     cpu_clock_timeout: 5
     id: 5136
-    rel_distances: *fibo_4_to_11
+    rel_distances: *id001
     wall_clock_timeout: 10
   5137:
     apt_version: 1.1.0
     cpu_clock_timeout: 5
     id: 5137
-    rel_distances: *fibo_4_to_11
+    rel_distances: *id001
     wall_clock_timeout: 10
   5139:
     apt_version: 1.1.1
     cpu_clock_timeout: 5
     id: 5139
-    rel_distances: *fibo_4_to_11
+    rel_distances: *id001
     wall_clock_timeout: 10
   5151:
     apt_version: 0.0.0
@@ -73,9 +72,21 @@ starexec_jobs:
     apt_version: 2.0.0
     cpu_clock_timeout: 5
     id: 5197
-    rel_distances: *fibo_4_to_11
+    rel_distances: *id001
     wall_clock_timeout: 10
-
+    description: too big bc of print statement
+  5199:
+    apt_version: 1.1.2
+    cpu_clock_timeout: 5
+    id: 5199
+    rel_distances: *id001
+    wall_clock_timeout: 10
+  5201:
+    apt_version: 2.1.0
+    cpu_clock_timeout: 5
+    id: 5201
+    rel_distances: *id001
+    wall_clock_timeout: 10
 versions:
   0.0.0:
     commits: null
@@ -84,7 +95,7 @@ versions:
     commits:
     - f58e199
     - bdd8c0b
-    description: First working version of edge-set-based clause selection
+    description: First working version of universal-set-based clause selection
   1.1.0:
     commits:
     - 2f8e185
@@ -122,6 +133,20 @@ versions:
       PyRes_rd_033: 400686
       PyRes_rd_054: 400682
     starexec_solver_id: '3773'
+  2.1.0:
+    commits:
+    - 3f80639
+    description: Ditch direction attribute, code refactoring and remove print statement
+    starexec_configs:
+      PyRes_rd_002: 400704
+      PyRes_rd_003: 400707
+      PyRes_rd_005: 400705
+      PyRes_rd_008: 400701
+      PyRes_rd_013: 400703
+      PyRes_rd_021: 400708
+      PyRes_rd_033: 400706
+      PyRes_rd_054: 400702
+    starexec_solver_id: '3788'
   X.X.X:
     commits: []
     description: null

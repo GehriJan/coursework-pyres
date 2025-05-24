@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><tns:Jobs xmlns:tns="https://starexec.ccs.miami.edu/starexec/public/batchJobSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://starexec.ccs.miami.edu/starexec/public/batchJobSchema.xsd batchJobSchema.xsd">
+<Job name="2.1.0_get_config">
+<JobAttributes>
+<description value="no description"/>
+<queue-id value="1"/>
+<bench-framework value="runsolver"/>
+<start-paused value="false"/>
+<cpu-timeout value="5"/>
+<wallclock-timeout value="10"/>
+<seed value="0"/>
+<mem-limit value="128.0"/>
+<postproc-id value="13"/>
+</JobAttributes>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400704" config-name="PyRes_rd_002" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400707" config-name="PyRes_rd_003" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400705" config-name="PyRes_rd_005" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400701" config-name="PyRes_rd_008" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400703" config-name="PyRes_rd_013" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400708" config-name="PyRes_rd_021" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400706" config-name="PyRes_rd_033" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+<JobPair bench-id="4249265" bench-name="FakeProblem.p" config-id="400702" config-name="PyRes_rd_054" job-space-id="85551" job-space-path="jannis_gehring" solver-id="3788" solver-name="2.1.0"/>
+</Job>
+</tns:Jobs>
